@@ -1,10 +1,22 @@
 <?php include 'views/inc/head.php';?>
-    <div class="container">
+<div class="container">
 
-      <div class="main">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+  <div class="main">
+    <h1>Advanced Database and DataMining</h1>
+  </div>
+  <div>
+    <h2>Pratical Work 1: </h2>
+    <p class="lead">We create this project for pratical work of Advanced Database and DataMining</p>
+    <h3>Created by: </h3>
+    <ul class="list-unstyled">
+      <li>BOURBIE Ismail</li>
+      <li>CHARFAOUI Younes</li>
+    </ul>
+    <h3>Teacher: </h3>
+    <ul class="list-unstyled">
+      <li>OUARED Abdelkader</li>
+    </ul>
+  </div>
 
-    </div><!-- /.container -->
+</div><!-- /.container -->
 <?php include 'views/inc/footer.php';?>
