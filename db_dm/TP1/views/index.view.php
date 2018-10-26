@@ -2,10 +2,10 @@
 <div class="container">
 
   <div class="main">
-    <h1>Advanced Database and DataMining</h1>
+    <h1 style="margin-bottom: 0">Advanced Database and DataMining</h1>
   </div>
   <div>
-    <h2>Pratical Work 1: </h2>
+    <h2>Pratical Work &#8470; 01: </h2>
     <p class="lead">We create this project for pratical work of Advanced Database and DataMining</p>
     <h3>Created by: </h3>
     <ul class="list-unstyled">

@@ -1,17 +1,63 @@
 body {
-    padding-top: 50px;
-  }
-  .main {
-    padding: 40px 15px;
-    text-align: center;
-  }
+  padding-top: 50px;
+  background-color: #f0f3f3;
+}
 
-  .input-group {
-    margin-bottom: 8px;
-  }
+.main {
+  padding: 40px 50px;
+  text-align: center;
+}
 
-  select.select_company {
-    width: 100% !important;
-    padding: 13px !important;
-  }
-  
+.main>h1 {
+  margin-bottom: 50px;
+}
+
+.input-group {
+  margin-bottom: 8px;
+}
+
+select.select_company {
+  width: 100% !important;
+  padding: 13px !important;
+}
+
+.main form {
+  width: 60%;
+  margin: auto;
+}
+.navbar-nav>li>.dropdown-menu {
+  background-color: #222;
+}
+
+.dropdown-menu>li>a {
+  color: #9d9d9d;
+}
+
+.btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.btn_container > input {
+  width: 45%;
+  margin-top: 20px;
+}
+
+
+/* On hover */
+
+.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-brand:focus,
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover {
+  background-color: #dd0a35;
+  color: #FFF;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+  color: #fff;
+  background-color: #dd0a35;
+}

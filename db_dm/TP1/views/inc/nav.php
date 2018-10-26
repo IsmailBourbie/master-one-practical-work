@@ -7,23 +7,17 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="home">Pratical Work 1</a>
+			<a class="navbar-brand" href="home">Pratical Work &#8470; 01</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="client?page=new">Client</a></li>
 						<li><a href="order?page=new">Order</a></li>
 						<li><a href="company?page=new">Company</a></li>
-						<li><a href="driver?page=new">Driver</a></li>
-						<li><a href="#">Transport</a></li>
-						<li><a href="#">Commodity</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
+						<li><a href="driver?page=new">Driver</a></li>					
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -32,13 +26,7 @@
 						<li><a href="client?page=show">Clients</a></li>
 						<li><a href="order?page=show">Orders</a></li>
 						<li><a href="company?page=show">Companies</a></li>
-						<li><a href="driver?page=show">Drivers</a></li>
-						<li><a href="#">Transports</a></li>
-						<li><a href="#">commoditys</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
+						<li><a href="driver?page=show">Drivers</a></li>					
 					</ul>
 				</li>
 			</ul>
