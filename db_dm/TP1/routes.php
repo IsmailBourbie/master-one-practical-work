@@ -11,3 +11,6 @@ $router->add('client', 'client.php');
 
 // Order routes
 $router->add('order', 'order.php');
+
+// Company routes
+$router->add('company', 'company.php');

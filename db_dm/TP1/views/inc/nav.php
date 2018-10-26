@@ -7,7 +7,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Project name</a>
+			<a class="navbar-brand" href="">Pratical Work 1</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
@@ -16,9 +16,10 @@
 					<ul class="dropdown-menu">
 						<li><a href="client?page=new">Client</a></li>
 						<li><a href="order?page=new">Order</a></li>
+						<li><a href="company?page=new">Company</a></li>
 						<li><a href="#">Driver</a></li>
 						<li><a href="#">Transport</a></li>
-						<li><a href="#">commodity</a></li>
+						<li><a href="#">Commodity</a></li>
 						<li role="separator" class="divider"></li>
 						<li><a href="#">Separated link</a></li>
 						<li role="separator" class="divider"></li>
@@ -30,6 +31,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="client?page=show">Clients</a></li>
 						<li><a href="order?page=show">Orders</a></li>
+						<li><a href="company?page=show">Company</a></li>
 						<li><a href="#">Drivers</a></li>
 						<li><a href="#">Transports</a></li>
 						<li><a href="#">commoditys</a></li>
