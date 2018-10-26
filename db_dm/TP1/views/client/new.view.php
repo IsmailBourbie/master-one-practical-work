@@ -3,10 +3,10 @@
 
     <div class="main">
         <h1>Add new client</h1>
-        <form action="">
+        <form action="client" method="post">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon" id="sizing-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Name" aria-describedby="sizing-addon1">
+                <input type="text" name="name" class="form-control" placeholder="Name" aria-describedby="sizing-addon1">
             </div>
         </form>
     </div>

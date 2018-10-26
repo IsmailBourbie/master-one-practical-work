@@ -2,10 +2,7 @@
 
 class Router {
 
-	public $routes = [
-		'GET' => [],
-		'POST' => [],
-	];
+	public $routes = [];
 
 	public static function load($file)
 	{
@@ -31,10 +28,10 @@ class Router {
 		$this->routes['POST'][$uri] = 'controllers/' . $controller;
 	}
 
-	public function direct($uri, $requestType)
+	public function direct($uri)
 	{
-		if (array_key_exists($uri, $this->routes[$requestType])) {
-			return $this->routes[$requestType][$uri];
+		if (array_key_exists($uri, $this->routes)) {
+			return $this->routes[$uri];
 		}  else {
 			throw new Exception('No route Match ' . $uri);
 			

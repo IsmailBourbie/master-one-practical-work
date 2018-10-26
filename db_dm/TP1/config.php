@@ -2,7 +2,7 @@
 
 return [
 	'database' => [
-		'name' => 'cleancode',
+		'name' => 'db_dm_tp1',
 		'username' => 'root',
 		'password' => '',
 		'host' => 'mysql:host=localhost',
