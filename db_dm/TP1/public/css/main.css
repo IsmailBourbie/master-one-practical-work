@@ -5,4 +5,13 @@ body {
     padding: 40px 15px;
     text-align: center;
   }
+
+  .input-group {
+    margin-bottom: 8px;
+  }
+
+  select.select_company {
+    width: 100% !important;
+    padding: 13px !important;
+  }
   

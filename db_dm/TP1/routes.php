@@ -14,3 +14,6 @@ $router->add('order', 'order.php');
 
 // Company routes
 $router->add('company', 'company.php');
+
+// Company routes
+$router->add('driver', 'driver.php');

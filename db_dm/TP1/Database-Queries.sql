@@ -13,7 +13,7 @@ CREATE TABLE `client` (
 
 CREATE TABLE company (
   _id  INTEGER PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(255) NOT NULL
+  company_name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE `order` (
@@ -29,21 +29,21 @@ CREATE TABLE `order` (
 
 CREATE TABLE driver (
   _id        INTEGER PRIMARY KEY AUTO_INCREMENT,
-  name       VARCHAR(255) NOT NULL,
+  driver_name       VARCHAR(255) NOT NULL,
   id_societe INTEGER,
   FOREIGN KEY (id_societe) REFERENCES company (_id)
 );
 
 CREATE TABLE transport (
   _id        INTEGER PRIMARY KEY AUTO_INCREMENT,
-  name       VARCHAR(255) NOT NULL,
+  transport_name       VARCHAR(255) NOT NULL,
   id_societe INTEGER,
   FOREIGN KEY (id_societe) REFERENCES company (_id)
 );
 
 CREATE TABLE article (
   _id          INTEGER PRIMARY KEY AUTO_INCREMENT,
-  name         VARCHAR(255) NOT NULL,
+  article_name         VARCHAR(255) NOT NULL,
   id_commande  INTEGER      NOT NULL,
   id_transport INTEGER      NOT NULL,
   FOREIGN KEY (id_commande) REFERENCES `order` (_id),
