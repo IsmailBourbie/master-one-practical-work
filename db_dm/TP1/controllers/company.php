@@ -24,8 +24,11 @@ if ($page == 'new') {
     }
 
 } elseif ($page == 'show') {
-    $title = 'companies';
+    // get data from database
+    $companies = $app['database']->selectAll('company');
+
+    $title = 'Companies';
     require 'views/company/show.view.php';
 } else {
-    header('Location: home');
+    redirect();
 }

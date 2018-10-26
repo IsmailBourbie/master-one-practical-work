@@ -24,6 +24,9 @@ if ($page == 'new') {
     }
 
 } elseif ($page == 'show') {
+    // get data from database
+    $clients = $app['database']->selectAll('client');
+
     $title = 'Clients';
     require 'views/client/show.view.php';
 } else {
