@@ -16,15 +16,17 @@ class QueryBuilder
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function selectAllJoin($table1, $table2)
+
+    // get data from drivers table
+    public function selectDrivers()
     {
-        $stmt = $this->pdo->prepare("select * from {$table1}, {$table2} WHERE {$table1}._id = {$table2}._id");
+        $stmt = $this->pdo->prepare("SELECT driver._id, driver.driver_name, company.company_name FROM (driver INNER JOIN company ON driver.id_societe = company._id)");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     // save name in specific table
-	
+
     public function save_name($table, $name)
     {
         $stmt = $this->pdo->prepare("INSERT INTO {$table} VALUES(NULL, ?)");
@@ -36,7 +38,7 @@ class QueryBuilder
     }
 
     // save in table has 2 params
-	
+
     public function save_two_param($table, $param)
     {
         $stmt = $this->pdo->prepare("INSERT INTO {$table} VALUES(NULL, ?, ?)");
@@ -45,5 +47,28 @@ class QueryBuilder
         }
 
         return false;
+    }
+
+
+    // get and insert data for orders table
+    public function save_order($data)
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO `order` VALUES(NULL, ?, ?, ?, ?, ?)");
+        if ($stmt->execute($data)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function selectOrders()
+    {
+        $stmt = $this->pdo->prepare("SELECT `order`._id, `order`.price, `order`.city_start, `order`.city_end,
+                                                     company.company_name, client.name FROM ((`order`
+                                                        INNER JOIN company ON `order`.id_societe = company._id)
+                                                        INNER JOIN client ON `order`.id_client = client._id)
+                                                        ");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

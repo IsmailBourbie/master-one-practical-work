@@ -30,7 +30,7 @@ if ($page == 'new') {
 
 } elseif ($page == 'show') {
     // get data from database
-    $drivers = $app['database']->selectAllJoin('driver', 'company');
+    $drivers = $app['database']->selectDrivers();
 
     $title = 'drivers';
     require 'views/driver/show.view.php';
