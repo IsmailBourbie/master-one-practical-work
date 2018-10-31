@@ -2,55 +2,29 @@ import time as t
 import matplotlib.pyplot as plt
 
 
-def factorial(number):
-    if number == 0:
-        return 1
-    return number * factorial(number - 1)
-
-
 def plot_result(values=None, result=None):
     values = values
     results = result
     plt.plot(values, results, c='r')
-    plt.xlabel("n Values (Integers)")
+    plt.xlabel("K Values (Integers)")
     plt.ylabel("Time Spent (Seconds)")
     plt.show()
 
 
-def calculate_time(n):
+def calculate_time(k):
     """
     This function calculate the time taken for a given n.
-    :param n: the number you want to test with.
+    :param k: the number you want to test with.
     :return: the time spent to make the combination with 14.
     """
     start = t.time()
-    result = combination(n, 14)
+    result = combination(24, k)
     end = t.time()
     total = end - start
-    print("The Result of combination of n = {} and k = 14 is {}".format(n, result))
-    print("The Time taken for n = {} and k = 14 is {}".format(n, total))
+    print("The Result of combination of k = {} and n = 14 is {}".format(k, result))
+    print("The Time taken for k = {} and n = 14 is {}".format(k, total))
     print("-------------------------------------------------------")
     return total
-
-
-def calculate_time_factorial(n):
-    """
-    This function calculate the time taken for a given n.
-    :param n: the number you want to test with.
-    :return: the time spent to make the combination with 14.
-    """
-    start = t.time()
-    result = combination_fast(n, 14)
-    end = t.time()
-    total = end - start
-    print("The Result of combination of n = {} and k = 14 is {}".format(n, result))
-    print("The Time taken for n = {} and k = 14 is {}".format(n, total))
-    print("-------------------------------------------------------")
-    return total
-
-
-def combination_fast(n, k):
-    return factorial(n) / (factorial(n - k) * factorial(k))
 
 
 def combination(n, k):
@@ -73,13 +47,14 @@ def main():
     function that do the ain work.
     :return: just nothing.
     """
-    values = [14, 23, 35, 41, 42]
+    values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
     results = []
     for i in values:
         results.append(calculate_time(i))
+
+    # plotting data data
     plot_result(values, results)
 
 
 # starting the experimentation.
-# calculate_time_factorial(43)
 main()
