@@ -1,7 +1,10 @@
 package mxcsBooks
 
 import jade.core.Agent
+import jade.core.behaviours.CyclicBehaviour
 import jade.core.behaviours.OneShotBehaviour
+import jade.lang.acl.ACLMessage
+import jade.lang.acl.MessageTemplate
 
 
 class BookSellerAgent : Agent() {
@@ -17,8 +20,8 @@ class BookSellerAgent : Agent() {
         myGui = BookSellerGui(this)
         myGui?.showGui()
 
-        //addBehaviour()
-        //addBehaviour()
+        addBehaviour(OfferRequestServer())
+        addBehaviour(PurchaseRequestServer())
     }
 
     override fun takeDown() {
@@ -32,5 +35,49 @@ class BookSellerAgent : Agent() {
                 catalogue[title] = parseInt
             }
         })
+    }
+
+    private inner class OfferRequestServer : CyclicBehaviour() {
+        override fun action() {
+            val templateMessage = MessageTemplate.MatchPerformative(ACLMessage.CFP)
+            val received = myAgent.receive()
+            if (received != null) {
+                val title = received.content
+                val reply = received.createReply()
+                val price = catalogue[title]
+                if (price != null) {
+                    reply.performative = ACLMessage.PROPOSE
+                    reply.content = price.toString()
+                } else {
+                    reply.performative = ACLMessage.REFUSE
+                    reply.content = "Not Available"
+                }
+                myAgent.send(reply)
+            } else {
+                block()
+            }
+        }
+    }
+
+    private inner class PurchaseRequestServer : CyclicBehaviour() {
+        override fun action() {
+            val templateMessage = MessageTemplate.MatchPerformative(ACLMessage.ACCEPT_PROPOSAL)
+            val received = myAgent.receive(templateMessage)
+            if (received != null) {
+                val title = received.content
+                val reply = received.createReply()
+                val price = catalogue.remove(title)
+                if (price != null) {
+                    reply.performative = ACLMessage.INFORM
+                    println("$title was sold to agent ${received.sender.localName}")
+                } else {
+                    reply.performative = ACLMessage.FAILURE
+                    reply.content = "Not Available"
+                }
+                myAgent.send(reply)
+            } else {
+                block()
+            }
+        }
     }
 }
