@@ -170,3 +170,131 @@ CREATE TABLE my_plan_table(
 -- and then use the foliwng query to save in the plan
 
 EXPLAIN PLAN INTO my_plan_table FOR SELECT * FROM LINEORDER;
+
+partition by range (LO_OrderDateKey)  (
+partition p1992_01 values less than (19920131),
+partition p1992_02 values less than (19920231),
+partition p1992_03 values less than (19920331),
+partition p1992_04 values less than (19920431),
+partition p1992_05 values less than (19920531),
+partition p1992_06 values less than (19920631),
+partition p1992_07 values less than (19920731),
+partition p1992_08 values less than (19920831),
+partition p1992_09 values less than (19920931),
+partition p1992_10 values less than (19921031),
+partition p1992_11 values less than (19921131),
+partition p1992_12 values less than (19921231),
+partition p1993_01 values less than (19930131),
+partition p1993_02 values less than (19930231),
+partition p1993_03 values less than (19930331),
+partition p1993_04 values less than (19930431),
+partition p1993_05 values less than (19930531),
+partition p1993_06 values less than (19930631),
+partition p1993_07 values less than (19930731),
+partition p1993_08 values less than (19930831),
+partition p1993_09 values less than (19930931),
+partition p1993_10 values less than (19931031),
+partition p1993_11 values less than (19931131),
+partition p1993_12 values less than (19931231),
+partition p1994_01 values less than (19940131),
+partition p1994_02 values less than (19940231),
+partition p1994_03 values less than (19940331),
+partition p1994_04 values less than (19940431),
+partition p1994_05 values less than (19940531),
+partition p1994_06 values less than (19940631),
+partition p1994_07 values less than (19940731),
+partition p1994_08 values less than (19940831),
+partition p1994_09 values less than (19940931),
+partition p1994_10 values less than (19941031),
+partition p1994_11 values less than (19941131),
+partition p1994_12 values less than (19941231),
+partition p1995_01 values less than (19950131),
+partition p1995_02 values less than (19950231),
+partition p1995_03 values less than (19950331),
+partition p1995_04 values less than (19950431),
+partition p1995_05 values less than (19950531),
+partition p1995_06 values less than (19950631),
+partition p1995_07 values less than (19950731),
+partition p1995_08 values less than (19950831),
+partition p1995_09 values less than (19950931),
+partition p1995_10 values less than (19951031),
+partition p1995_11 values less than (19951131),
+partition p1995_12 values less than (19951231),
+partition p1996_01 values less than (19960131),
+partition p1996_02 values less than (19960231),
+partition p1996_03 values less than (19960331),
+partition p1996_04 values less than (19960431),
+partition p1996_05 values less than (19960531),
+partition p1996_06 values less than (19960631),
+partition p1996_07 values less than (19960731),
+partition p1996_08 values less than (19960831),
+partition p1996_09 values less than (19960931),
+partition p1996_10 values less than (19961031),
+partition p1996_11 values less than (19961131),
+partition p1996_12 values less than (19961231),
+partition p1997_01 values less than (19970131),
+partition p1997_02 values less than (19970231),
+partition p1997_03 values less than (19970331),
+partition p1997_04 values less than (19970431),
+partition p1997_05 values less than (19970531),
+partition p1997_06 values less than (19970631),
+partition p1997_07 values less than (19970731),
+partition p1997_08 values less than (19970831),
+partition p1997_09 values less than (19970931),
+partition p1997_10 values less than (19971031),
+partition p1997_11 values less than (19971131),
+partition p1997_12 values less than (19971231),
+partition p1998_01 values less than (19980131),
+partition p1998_02 values less than (19980231),
+partition p1998_03 values less than (19980331),
+partition p1998_04 values less than (19980431),
+partition p1998_05 values less than (19980531),
+partition p1998_06 values less than (19980631),
+partition p1998_07 values less than (19980731),
+partition p1998_08 values less than (19980831),
+partition p1998_09 values less than (19980931),
+partition p1998_10 values less than (19981031),
+partition p1998_11 values less than (19981131),
+partition p1998_12 values less than (19981231)
+) ;
+
+PARTITION BY HASH (LO_OrderDateKey) PARTITIONS 8;
+
+
+-- the test queries after fragmentation
+select 
+    d_year, s_nation, p_category,
+    sum(lo_revenue - lo_supplycost) as profit
+from 
+    DATES, CUSTOMER, SUPPLIER, PART, LINEORDER
+where 
+    lo_custkey = c_custkey
+    and lo_suppkey = s_suppkey
+    and lo_partkey = p_partkey
+    and lo_orderdate = d_datekey
+    and c_region = 'AMERICA'
+    and s_region = 'AMERICA'
+    and (d_year = 1997 or d_year = 1998)
+    and (p_mfgr = 'MFGR#1' or p_mfgr = 'MFGR#2')
+group by 
+    d_year, s_nation, p_category
+order by 
+    d_year, s_nation, p_category;
+
+select 
+d_year, c_nation,
+sum(lo_revenue - lo_supplycost) as profit
+from 
+    DATES, CUSTOMER, SUPPLIER, PART, LINEORDER
+where 
+    lo_custkey = c_custkey
+    and lo_suppkey = s_suppkey
+    and lo_partkey = p_partkey
+    and lo_orderdate = d_datekey
+    and c_region = 'AMERICA'
+    and s_region = 'AMERICA'
+    and (p_mfgr = 'MFGR#1' or p_mfgr = 'MFGR#2')
+group by 
+    d_year, c_nation
+order by 
+    d_year, c_nation;
