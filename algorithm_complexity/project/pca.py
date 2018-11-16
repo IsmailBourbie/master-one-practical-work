@@ -4,6 +4,9 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
     
 def pca(number_compontents, data , is_scaled = True):
+    if not 0 <= number_compontents <= data.shape[1]:
+        raise ValueError('The number of features are less than the number of components')
+    
     if not is_scaled:
         scaler = StandardScaler()
         data = scaler.fit_transform(data)
