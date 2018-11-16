@@ -28,12 +28,11 @@ def pca(number_compontents, data , is_scaled = True):
     # Sorting All of Them
     eig_pairs.sort(key = lambda x : x[0] , reverse= True)
     
-    final = []
-    for i in range(number_compontents):
-        final.append(eig_pairs[i][1].reshape(data.shape[1],1))
-
-    # Creating the Projection Matrix
-    projection_matrix = np.hstack((final))
+    # Getting the selected vector in a form of matrix
+    final = [eig_pairs[i][1].reshape(data.shape[1],1) for i in range(number_compontents)]
+    
+    # Creating the Projection Matrix, multiplying by -identity is an addons
+    projection_matrix = np.hstack((final)).dot(-np.identity(number_compontents))
     
     # transforming the data
     Y = data.dot(projection_matrix)
