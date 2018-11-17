@@ -15,7 +15,7 @@ def pca(number_compontents, data , is_scaled = True):
     cov_matrix = np.cov(data.T)
     
     # calculate the eigen things
-    eig_vals , eig_vect = np.linalg.eigh(cov_matrix)
+    eig_vals , eig_vecs = np.linalg.eigh(cov_matrix)
     
     indexes = np.argsort(-eig_vals)
     eig_vals = eig_vals[indexes] # sort in proper order
