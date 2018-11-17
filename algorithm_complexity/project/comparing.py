@@ -12,23 +12,24 @@ compontest = [2,4,8,12,16,32,64]
 time_one = []
 time_two = []
 
-for i in compontest:
-    data = np.random.rand(5000,100)
+
+
+for i in example:
+    data = np.random.rand(i,i)
     start = t.time()
-    pcaa = PCA(i)
+    pcaa = PCA(5)
     new_one = pcaa.fit_transform(data)
     end = t.time()
     time_one.append(end-start)
             
     start = t.time()
-    new_two = pca(i,data)
+    new_two = pca(5,data)
     end = t.time()
     time_two.append(end-start)
-    if new_one.all() == new_two.all():
-        print(True)
+    
 
-plt.plot(compontest,time_one,c ='b',label = 'Sklearn PCA')
-plt.plot(compontest,time_two,c ='r', label = 'Our PCA')
+plt.plot(time_one,c ='b',label = 'Sklearn PCA')
+plt.plot(time_two,c ='r', label = 'Our PCA')
 plt.xlabel('Number Of Components')
 plt.ylabel('Time in Second')
 plt.title('Time Taken for (5000,100) dataset')
