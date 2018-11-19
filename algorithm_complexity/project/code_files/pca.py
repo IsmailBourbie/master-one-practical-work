@@ -3,14 +3,10 @@
 import numpy as np
 from sklearn.preprocessing import StandardScaler
     
-def pca(number_compontents, data , is_scaled = True):
+def pca(number_compontents, data):
     if not 0 <= number_compontents <= data.shape[1]:
         raise ValueError('The number of features are less than the number of components')
-    
-    if not is_scaled:
-        scaler = StandardScaler()
-        data = scaler.fit_transform(data)
-    
+
     # calculate the covariance matrix
     cov_matrix = np.cov(data.T)
     
@@ -49,9 +45,9 @@ def pca(number_compontents, data , is_scaled = True):
 
     
     # transforming the data
-    Y = data.dot(eig_vecs)
+    Y = data.dot(eig_vecs[:,:number_compontents])
     
-    return Y[:,:number_compontents]
+    return Y
     
         
         
