@@ -45,9 +45,9 @@ def pca(number_compontents, data):
 
     
     # transforming the data
-    Y = data.dot(eig_vecs)
+    Y = data.dot(eig_vecs[:,:number_compontents])
     
-    return Y[:,:number_compontents]
+    return Y
     
         
         
