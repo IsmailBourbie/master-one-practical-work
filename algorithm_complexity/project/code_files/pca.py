@@ -13,7 +13,7 @@ def pca(number_compontents, data):
     # calculate the eigen things
     eig_vals , eig_vecs = np.linalg.eigh(cov_matrix)
     
-    indexes = np.argsort(-eig_vals)
+    indexes = np.argsort(-eig_vals , kind = 'heapsort')
     eig_vals = eig_vals[indexes] # sort in proper order
     eig_vals = np.maximum(eig_vals, 0) # get rid of negatives
     eig_vecs = eig_vecs[:,indexes]
