@@ -13,10 +13,11 @@ def pca(number_compontents, data):
     # calculate the eigen things
     eig_vals , eig_vecs = np.linalg.eigh(cov_matrix)
     
+    """
     indexes = np.argsort(-eig_vals , kind = 'heapsort')
     eig_vals = eig_vals[indexes] # sort in proper order
     eig_vals = np.maximum(eig_vals, 0) # get rid of negatives
-    eig_vecs = eig_vecs[:,indexes]
+    eig_vecs = eig_vecs[:,indexes]"""
 
     # Forming a pair of Eign Values / Pairs
     """eig_pairs = []
@@ -24,17 +25,17 @@ def pca(number_compontents, data):
         eig_pairs.append((np.abs(eig_vals[i]) , eig_vect[:,i])))"""
     
     # codes are the same
-    # eig_pairs = [(np.abs(eig_vals[i]) , eig_vect[:,i]) for i in range(len(eig_vals))]
+    eig_pairs = [(np.abs(eig_vals[i]) , eig_vecs[:,i]) for i in range(len(eig_vals))]
 
     # Sorting All of Them
-    # eig_pairs.sort(key = lambda x : x[0] , reverse= True)
+    eig_pairs.sort(key = lambda x : x[0] , reverse= True)
     
 
     # Getting the selected vector in a form of matrix
-    # final = [eig_pairs[i][1].reshape(data.shape[1],1) for i in range(number_compontents)]
+    final = [eig_pairs[i][1].reshape(data.shape[1],1) for i in range(number_compontents)]
     
     # Creating the Projection Matrix, multiplying by -identity is an addons
-    # projection_matrix = np.hstack((final)).dot(-np.identity(number_compontents))
+    projection_matrix = np.hstack((final)).dot(-np.identity(number_compontents))
 
     # final = []
     # for i in range(number_compontents):
@@ -45,7 +46,7 @@ def pca(number_compontents, data):
 
     
     # transforming the data
-    Y = data.dot(eig_vecs[:,:number_compontents])
+    Y = data.dot(projection_matrix)
     
     return Y
     

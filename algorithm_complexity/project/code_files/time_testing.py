@@ -8,7 +8,7 @@ import time as t
 from sklearn.decomposition import PCA
 
 def x_cube(x):
-    return (x**3)/700
+    return (x**3)/500
 
 result_our = []
 result_sklearn = []
@@ -28,10 +28,9 @@ for i in range(s):
     end = t.time()
     result_our.append(end-start)
     
-fake = np.copy(result_our)
-np.argsort(fake)
 x = np.linspace(0,s,num= s)
 plt.plot(x , result_our , c = 'b' , label = 'Our PCA')
+
 plt.plot(x_cube(x) , c = 'g' , label = 'Cube Function')
 plt.legend()
 plt.xlabel('Size Of Matrix ')

@@ -3,7 +3,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
-
+from pca import pca
+import time as t
 
 ################## The Fashion Mnist Daata set
 
@@ -36,13 +37,21 @@ Y = mnist.iloc[:,0].values
 
 from sklearn.decomposition import PCA
 
-pca = PCA(2)
-new = pca.fit_transform(X)
-
+start = t.time()
+pcaa = PCA(2)
+new = pcaa.fit_transform(X)
+end = t.time()
+print(end-start)
 #Plot in 2D
 plt.scatter(new[:,0],new[:,1],c = Y, alpha = 0.3 , s = 100)
 plt.show()
 
+start = t.time()
+result = pca(2 , X)
+end = t.time()
+print(end-start)
+plt.scatter(result[:,0],result[:,1],c = Y, alpha = 0.3 , s = 100)
+plt.show()
 # Plot in 3D
 pca = PCA(3)
 new3d = pca.fit_transform(X)
