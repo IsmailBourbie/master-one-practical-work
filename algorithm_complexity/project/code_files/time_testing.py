@@ -8,7 +8,7 @@ import time as t
 from sklearn.decomposition import PCA
 
 def x_cube(x):
-    return (x**3)/900
+    return (x**3)/3000000000
 
 result_our = []
 result_sklearn = []
@@ -62,4 +62,20 @@ for i in range(1,2000):
     result.append(end - start)
 
 plt.plot(x ,result , c = 'b' )
+plt.show()
+
+###### Testing covariance matrix
+result = []
+s = 400
+x = np.linspace(2,s,num= s -2)
+for i in range(2,s):
+    data = np.random.rand(i,i)
+    start = t.time()
+    np.cov(data)
+    end = t.time()
+    result.append(end - start)
+
+plt.plot(x ,result , c = 'b' , label = 'Time of covariance')
+plt.plot(x_cube(x) , c ='r' , label ='Cubic Function')
+plt.legend()
 plt.show()
