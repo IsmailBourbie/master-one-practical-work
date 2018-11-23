@@ -27,7 +27,7 @@
 -- [INFO]: 
 ---- You must add the file of load_salaries.dump to the same directory of this current file "creations_queries.sql" and run:
 ------mysql -uroot < creations_queries.sql
----- PS: I didn't add the file in github because its large file.
+---- PS: I ignore the file for github because its large file.
 
 DROP DATABASE IF EXISTS employees;
 CREATE DATABASE IF NOT EXISTS employees;
@@ -50,8 +50,7 @@ CREATE TABLE salaries (
     emp_no      INT             NOT NULL,
     salary      INT             NOT NULL,
     from_date   DATE            NOT NULL,
-    to_date     DATE            NOT NULL,
-    PRIMARY KEY (emp_no, from_date)
+    to_date     DATE            NOT NULL
 );
 
 SELECT 'LOADING salaries' as 'INFO';
