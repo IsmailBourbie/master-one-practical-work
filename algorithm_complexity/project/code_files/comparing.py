@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import time as t
 from sklearn.decomposition import PCA
 
-example = [100,500,1000,1500,5000,7500,10000]
+example = [100,500,1000]
 features = [20,30,50,100]
 compontest = [2,4,8,12,16,32,64]
 time_one = []
@@ -26,6 +26,8 @@ for i in example:
     new_two = pca(5,data)
     end = t.time()
     time_two.append(end-start)
+    if np.all(new_one) == np.all(new_two):
+        print('True')
     
 
 plt.plot(time_one,c ='b',label = 'Sklearn PCA')

@@ -5,56 +5,77 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pca import pca
 import time as t
-
-def pcav(number_compontents, data , is_scaled = True):  
-
-    u,s,v = np.linalg.svd(data.T)
-
-    eig_pairs = [(np.abs(u[i]) , s[:,i]) for i in range(len(u))]    
-
-    eig_pairs.sort(key = lambda x : x[0] , reverse= True)  
-
-    final=[]
-    for i in range(number_compontents):  
-	       final.append(eig_pairs[i][1].reshape(data.shape[1],1))  
-	
-	    	# Creating the Projection Matrix  
-    projection_matrix = np.hstack((final))  
-	
-	   	 # transforming the data  
-    Y = data.dot (projection_matrix)  
-	
-    return Y  
-
-
-s = 40
-result = []
-for i in range(s):
-    data = np.random.rand(i*100,i*100)
-    start = t.time()
-    new = pca(i,data)
-    end = t.time()
-    result.append(end-start)
-    
-x = np.linspace(0,s,num=s)
-plt.plot(x , result , c = 'b')
-plt.show()
+from sklearn.decomposition import PCA
 
 def x_cube(x):
-    return x**3
+    return (x**3)/3000000000
 
-plt.plot(x , x_cube(x) , c = 'b')
+result_our = []
+result_sklearn = []
+
+s = 10
+
+for i in range(s):
+    data = np.random.rand(i*100 + 3,i*100 + 3)
+    start = t.time()
+    pcc = PCA(2)
+    new = pcc.fit_transform(data)
+    end = t.time()
+    result_sklearn.append(end-start)
+    
+    start = t.time()
+    xx = pca(2,data)
+    end = t.time()
+    result_our.append(end-start)
+    
+x = np.linspace(0,s,num= s)
+
+plt.plot(x , result_our , c = 'b' , label = 'Our PCA')
+plt.plot(x_cube(x) , c = 'g' , label = 'Cube Function')
+plt.legend()
+plt.xlabel('Size Of Matrix ')
+plt.ylabel('Time in Second (S)')
+plt.title('Time Taken By Algorithms')
 plt.show()
 
-dd = np.random.rand(40*100,40*100)
-start = t.time()
-xx = pcav(2,dd)
-end = t.time()
-end-start
-from sklearn.decomposition import PCA
-start = t.time()
-pcc = PCA(2)
-new = pcc.fit_transform(dd)
-end = t.time()
+#### Testing Reshape function:
+result = []
+x = np.linspace(1,2000,num= 1999)
+for i in range(1,2000):
+    data = np.random.rand(i,1)
+    start = t.time()
+    data.reshape(1,i)
+    end = t.time()
+    result.append(end - start)
 
-end-start
+plt.plot(x ,result , c = 'b' )
+plt.show()
+
+##### Testing hstack Function
+result = []
+x = np.linspace(1,2000,num= 1999)
+for i in range(1,2000):
+    data = np.random.rand(i,1)
+    start = t.time()
+    np.hstack()
+    end = t.time()
+    result.append(end - start)
+
+plt.plot(x ,result , c = 'b' )
+plt.show()
+
+###### Testing covariance matrix
+result = []
+s = 400
+x = np.linspace(2,s,num= s -2)
+for i in range(2,s):
+    data = np.random.rand(i,i)
+    start = t.time()
+    np.cov(data)
+    end = t.time()
+    result.append(end - start)
+
+plt.plot(x ,result , c = 'b' , label = 'Time of covariance')
+plt.plot(x_cube(x) , c ='r' , label ='Cubic Function')
+plt.legend()
+plt.show()
