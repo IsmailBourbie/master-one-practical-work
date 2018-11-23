@@ -1,29 +1,58 @@
--- Must create database tp4;
+--  Sample employee database for testing
+--  See changelog table for details
+--  Copyright (C) 2007,2008, MySQL AB
+--  
+--  Original data created by Fusheng Wang and Carlo Zaniolo
+--  http://www.cs.aau.dk/TimeCenter/software.htm
+--  http://www.cs.aau.dk/TimeCenter/Data/employeeTemporalDataSet.zip
+-- 
+--  Current schema by Giuseppe Maxia 
+--  Data conversion from XML to relational by Patrick Crews
+-- 
+-- This work is licensed under the 
+-- Creative Commons Attribution-Share Alike 3.0 Unported License. 
+-- To view a copy of this license, visit 
+-- http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to 
+-- Creative Commons, 171 Second Street, Suite 300, San Francisco, 
+-- California, 94105, USA.
+-- 
+--  DISCLAIMER
+--  To the best of our knowledge, this data is fabricated, and
+--  it does not correspond to real people. 
+--  Any similarity to existing people is purely coincidental.
+-- 
 
--- Create table of dates with 3 partitions (p0, p1, p2);
-CREATE TABLE DATES (
-  D_DATEKEY          INTEGER,
-  D_DATE             VARCHAR(18) NOT NULL,
-  D_DAYOFWEEK        VARCHAR(10) NOT NULL,
-  D_MONTH            VARCHAR(9)  NOT NULL,
-  D_YEAR             INTEGER     NOT NULL,
-  D_YEARMONTHNUM     INTEGER,
-  D_YEARMONTH        VARCHAR(7)  NOT NULL,
-  D_DAYNUMINWEEK     INTEGER,
-  D_DAYNUMINMONTH    INTEGER,
-  D_DAYNUMINYEAR     INTEGER,
-  D_MONTHNUMINYEAR   INTEGER,
-  D_WEEKNUMINYEAR    INTEGER,
-  D_SELLINGSEASON    VARCHAR(12) NOT NULL,
-  D_LASTDAYINWEEKFL  INTEGER,
-  D_LASTDAYINMONTHFL INTEGER,
-  D_HOLIDAYFL        INTEGER,
-  D_WEEKDAYFL        INTEGER
-)
-  PARTITION BY RANGE (D_YEAR) (
-  PARTITION p0 VALUES LESS THAN (1990),
-  PARTITION p1 VALUES LESS THAN (1994),
-  PARTITION p2 VALUES LESS THAN (1996),
-  PARTITION p3 VALUES LESS THAN (1999)
-  );
+
+
+-- [INFO]: 
+---- You must add the file of load_salaries.dump to the same directory of this current file "creations_queries.sql" and run:
+------mysql -uroot < creations_queries.sql
+---- PS: I ignore the file for github because its large file.
+
+DROP DATABASE IF EXISTS employees;
+CREATE DATABASE IF NOT EXISTS employees;
+USE employees;
+
+SELECT 'CREATING DATABASE STRUCTURE' as 'INFO';
+
+DROP TABLE IF EXISTS dept_emp,
+                     dept_manager,
+                     titles,
+                     salaries, 
+                     employees, 
+                     departments;
+
+   set storage_engine = InnoDB;
+
+select CONCAT('storage engine: ', @@storage_engine) as INFO;
+
+CREATE TABLE salaries (
+    emp_no      INT             NOT NULL,
+    salary      INT             NOT NULL,
+    from_date   DATE            NOT NULL,
+    to_date     DATE            NOT NULL
+);
+
+SELECT 'LOADING salaries' as 'INFO';
+source load_salaries.dump;
 
