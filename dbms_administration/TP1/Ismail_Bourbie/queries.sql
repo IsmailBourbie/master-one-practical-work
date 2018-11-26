@@ -16,8 +16,8 @@ CREATE TYPE work_category AS ENUM ('Assistant' , 'Mechanic');
 CREATE TABLE client (
   id         serial PRIMARY KEY,
   civ        VARCHAR(255),
-  last_name  VARCHAR(255),
   first_name VARCHAR(255),
+  last_name  VARCHAR(255),
   birthday   DATE,
   address    VARCHAR(255),
   prof_phone VARCHAR(255),
@@ -27,8 +27,8 @@ CREATE TABLE client (
 /* CREATE TABLE Employee*/
 CREATE TABLE employee (
   id         serial PRIMARY KEY,
-  last_name  VARCHAR(255) NOT NULL,
   first_name VARCHAR(255) NOT NULL,
+  last_name  VARCHAR(255) NOT NULL,
   salary     REAL         NOT NULL,
   category   work_category  NOT NULL
 );
@@ -61,18 +61,18 @@ CREATE TABLE intervention (
   id           serial PRIMARY KEY,
   vehicle_id   INT          NOT NULL,
   type         VARCHAR(255) NOT NULL,
-  start_date   DATE         NOT NULL,
-  end_date     DATE         NOT NULL,
+  start_date   TIMESTAMP    NOT NULL,
+  end_date     TIMESTAMP    NOT NULL,
   count_interv REAL         NOT NULL,
   FOREIGN KEY (vehicle_id) REFERENCES vehicle (id)
 );
 
 /* CREATE TABLE Intervenants*/
 CREATE TABLE intervenants (
-  intervention_id INTEGER NOT NULL,
-  employee_id     INTEGER NOT NULL,
-  start_date      DATE    NOT NULL,
-  end_date        DATE    NOT NULL,
+  intervention_id INTEGER      NOT NULL,
+  employee_id     INTEGER      NOT NULL,
+  start_date      TIMESTAMP    NOT NULL,
+  end_date        TIMESTAMP    NOT NULL,
   FOREIGN KEY (intervention_id) REFERENCES intervention (id),
   FOREIGN KEY (employee_id) REFERENCES employee (id),
   PRIMARY KEY (intervention_id, employee_id)
