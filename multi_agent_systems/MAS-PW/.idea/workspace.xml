@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ca77175-dd24-47d5-94ff-e0d188d4e28a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAS-PW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MAS-PW.iml" afterDir="false" />
-    </list>
+    <list default="true" id="2ca77175-dd24-47d5-94ff-e0d188d4e28a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +112,7 @@
     <session id="1144268718">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -184,7 +181,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/databseAgents/DBAAgent.kt">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -306,7 +307,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543312658399" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543312681751" />
     <property name="last_opened_file_path" value="F:/Softwares/Developer Tools/Java/JDK and Libraries/mysql-connector-java-5.1.45-bin.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -401,12 +402,12 @@
       <workItem from="1541257355395" duration="1440000" />
       <workItem from="1541285793820" duration="71000" />
       <workItem from="1541362746852" duration="627000" />
-      <workItem from="1543309437053" duration="3176000" />
+      <workItem from="1543309437053" duration="3397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17515000" />
+    <option name="totallyTimeSpent" value="17736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -567,7 +568,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/databseAgents/DBAAgent.kt">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
