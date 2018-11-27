@@ -11,5 +11,11 @@ UPDATE intervention SET start_date = start_date + interval '5 day' WHERE DATE_PA
 
 
 
+/*Q5: Display model with their marks*/
+
+SELECT model.*, mark.mark FROM model INNER JOIN mark ON model.mark_id = mark.id;
+
+/*Q5: display all vehicle who have at least one intervention */
+SELECT vehicle.*, i.id FROM vehicle INNER JOIN intervention i on vehicle.id = i.vehicle_id;
 
 
