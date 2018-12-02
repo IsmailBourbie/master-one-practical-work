@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="525.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientController">
    <children>
-      <Label layoutX="361.0" layoutY="36.0" prefHeight="45.0" prefWidth="131.0" text="New Client" textAlignment="CENTER">
+      <Label layoutX="302.0" layoutY="33.0" prefHeight="45.0" prefWidth="249.0" text="Client Manipulations" textAlignment="CENTER">
          <font>
             <Font size="26.0" />
          </font>
@@ -38,7 +38,7 @@
                <TextField fx:id="observation" promptText="Observation" />
            </children>
        </VBox>
-      <VBox layoutX="580.0" layoutY="92.0" prefHeight="318.0" prefWidth="206.0" spacing="20">
+      <VBox layoutX="580.0" layoutY="92.0" alignment="CENTER_LEFT" prefHeight="318.0" prefWidth="206.0" spacing="20">
          <children>
             <CheckBox fx:id="livreMmAddr" mnemonicParsing="false" text="Livre même adresse" />
             <CheckBox fx:id="facMmAddr" mnemonicParsing="false" text="Facture même adresse" />
