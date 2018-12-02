@@ -18,3 +18,5 @@ SELECT model.*, mark.mark FROM model INNER JOIN mark ON model.mark_id = mark.id;
 
 /*Q6: display all vehicle who have at least one intervention */
 SELECT * FROM vehicle WHERE id IN (SELECT intervention.vehicle_id FROM intervention);
+
+
