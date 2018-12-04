@@ -1,4 +1,4 @@
-package databseAgents
+package databaseAgents
 
 import jade.core.AID
 import jade.core.Agent
@@ -59,12 +59,13 @@ class QueryAgent : Agent() {
             var receivedMessage: ACLMessage?
             doWait()
             sendMessages.content = textField.text
-            val receiver = AID("Bettaj", AID.ISLOCALNAME)
+            val receiver = AID("Ismail", AID.ISLOCALNAME)
             sendMessages.addReceiver(receiver)
             send(sendMessages)
             println("Query Sent: " + sendMessages.content)
             receivedMessage = receive()
             if (receivedMessage != null) {
+                println(receivedMessage.content)
                 var number = Integer.parseInt(receivedMessage.content)
                 println("Number Of Row By QueryAgent is $number")
                 if (number == 0)
