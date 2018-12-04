@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+    <children>
+        <Label layoutX="201.0" layoutY="14.0" prefHeight="69.0" prefWidth="131.0" text="Login">
+            <font>
+                <Font name="Cairo Bold" size="48.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="usernameField" layoutX="201.0" layoutY="148.0" prefHeight="57.0" prefWidth="198.0"
+                   promptText="UserName"/>
+        <PasswordField fx:id="passwordField" layoutX="201.0" layoutY="235.0" prefHeight="57.0" prefWidth="198.0"
+                       promptText="Password"/>
+        <Button fx:id="loginButton" layoutX="214.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleLogin"
+                prefHeight="25.0" prefWidth="65.0" text="Login"/>
+        <Label layoutX="201.0" layoutY="107.0" text="Please Provide Your Information."/>
+        <Button fx:id="resetButton" layoutX="322.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleReset"
+                prefHeight="25.0" prefWidth="65.0" styleClass="login_btn" text="Reset"/>
+        <Label fx:id="errorLabel" layoutX="227.0" layoutY="308.0" text="Username Or assword Error" textFill="#dd0b0b"
+               visible="false"/>
+    </children>
+</AnchorPane>

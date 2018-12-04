@@ -1,4 +1,4 @@
-package databseAgents
+package databaseAgents
 
 import jade.core.AID
 import jade.core.Agent
@@ -21,17 +21,17 @@ class DBAAgent : Agent() {
         private val buttonAction: JButton
 
         init {
-            title = "Agent Bettaj"
+            title = "Agent Database"
             setBounds(100, 100, 450, 200)
-            val contenu = contentPane
-            contenu.layout = FlowLayout()
+            val content = contentPane
+            content.layout = FlowLayout()
 
             labelOne = JLabel("Hello World! My name is $localName")
             labelTwo = JLabel("I'm Waiting For The Query")
-            contenu.add(labelOne)
-            contenu.add(labelTwo)
+            content.add(labelOne)
+            content.add(labelTwo)
             buttonAction = JButton("Kill")
-            contenu.add(buttonAction)
+            content.add(buttonAction)
             buttonAction.addActionListener(this)
         }
 
@@ -61,13 +61,13 @@ class DBAAgent : Agent() {
 
                 val msg2 = ACLMessage(ACLMessage.INFORM)
                 msg2.content = Extraction.count.toString()
-                var receiver = AID("Ali", AID.ISLOCALNAME)
+                var receiver = AID("Younes", AID.ISLOCALNAME)
                 msg2.addReceiver(receiver)
                 send(msg2)
 
                 for (person in Extraction.data) {
                     msg2.contentObject = person
-                    receiver = AID("Ali", AID.ISLOCALNAME)
+                    receiver = AID("Younes", AID.ISLOCALNAME)
                     msg2.addReceiver(receiver)
                     send(msg2)
                     Extraction.count--
