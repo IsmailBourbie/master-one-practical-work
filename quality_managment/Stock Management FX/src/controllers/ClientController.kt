@@ -10,6 +10,7 @@ import java.net.URL
 import java.util.*
 
 class ClientController : Initializable {
+
     @FXML
     lateinit var firstName: TextField
     lateinit var lastName: TextField
@@ -55,9 +56,15 @@ class ClientController : Initializable {
         val exemptTva = exemptTva.isSelected
         val observation = observation.text.trim()
 
+        if (validateData()) return
+
         Database.addClient(society, civility, firstName, lastName, address, codePostal, city
                 , pays, numTel, numMobile, fax, email, type, livreMmAddr, facMmAddr, exemptTva
                 , Database.user, java.sql.Date(Date().time), Database.user, java.sql.Date(Date().time), observation)
+    }
+
+    private fun validateData(): Boolean {
+        return false
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
