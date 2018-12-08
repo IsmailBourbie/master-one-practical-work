@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent$SimpleBehaviour.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent$SimpleBehaviour.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent$setup$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent$setup$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent$setup$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent$setup$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/behaviourAgent/SimpleAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookBuyerAgent$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookBuyerAgent$RequestPerformer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookBuyerAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookSellerAgent$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookSellerAgent$OfferRequestsServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookSellerAgent$PurchaseOrdersServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookSellerAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookSellerGui$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookSellerGui$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/bookTrading/BookSellerGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/mxcsBooks/BookBuyerAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../multi_agent_systems/MAS-PW/out/production/MAS-PW/mxcsBooks/BookBuyerAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ClientController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ClientController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ressources/fxmls/client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ressources/fxmls/client.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -209,73 +189,12 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/MainController.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="43" column="18" lean-forward="true" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Database.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="e#18#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ressources/fxmls/client.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/ClientController.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ressources/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controllers/LoginController.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
-              <folding>
-                <element signature="e#21#399#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ressources/fxmls/main.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="169">
+              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -375,6 +294,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -430,7 +350,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -447,9 +366,9 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543748632832" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/mysql-connector-java-5.1.45-bin.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -612,7 +531,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20902000" />
+    <option name="totallyTimeSpent" value="20965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -670,13 +589,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/657e797e-6561-45a5-936c-dc1254d1af24/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/657e797e-6561-45a5-936c-dc1254d1af24/console.sql" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -684,13 +597,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/common/kotlin/TextH.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="205" column="3" selection-start-line="205" selection-start-column="3" selection-end-line="205" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/common/kotlin/TextH.kt" />
     <entry file="das://657e797e-6561-45a5-936c-dc1254d1af24/schema/gestion/table/client.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -730,13 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/657e797e-6561-45a5-936c-dc1254d1af24/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/657e797e-6561-45a5-936c-dc1254d1af24/console_1.sql" />
     <entry file="file://$PROJECT_DIR$/src/ressources/fxmls/main.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -756,16 +657,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#18#87#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ressources/fxmls/client.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="169">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -788,9 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#21#399#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
