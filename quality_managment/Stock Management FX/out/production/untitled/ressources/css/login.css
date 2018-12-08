@@ -1,9 +1,0 @@
-.login_btn {
- -fx-background-color: transparent;
-    -fx-border-color: #AAAAAA;
-    -fx-border-style: solid;
-}
-
-.login_btn:hover{
-    -fx-background-color: #BBBBBB;
-}
