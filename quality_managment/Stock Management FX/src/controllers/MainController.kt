@@ -15,6 +15,8 @@ class MainController : Initializable {
     @FXML
     lateinit var clientButton: Button
     lateinit var productButton: Button
+    lateinit var supplierButton: Button
+    lateinit var orderButton: Button
 
 
     @FXML
