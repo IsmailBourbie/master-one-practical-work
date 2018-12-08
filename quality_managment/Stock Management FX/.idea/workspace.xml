@@ -1,7 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../../dbms_administration/TP1/Ismail_Bourbie/Report DB security.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dbms_administration/TP1/Ismail_Bourbie/screenshots_db_sec/connect_with_ismail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dbms_administration/TP1/Ismail_Bourbie/screenshots_db_sec/create_role.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../dbms_administration/TP1/Ismail_Bourbie/screenshots_db_sec/grant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dbms_administration/TP1/Ismail_Bourbie/queries_after_correction.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/657e797e-6561-45a5-936c-dc1254d1af24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_45_bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stock Managment.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/kotlin-reflect-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/kotlin-test-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/JavaFXApp/JavaFXApp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/META-INF/Stock Managment.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/controllers/ClientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/controllers/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/controllers/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/database/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/main/Start.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/main/StartKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/models/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/ressources/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/ressources/fxmls/client.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/ressources/fxmls/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/ressources/fxmls/main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled/ressources/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ClientController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/LoginController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MainController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Database.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Start.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Client.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ressources/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ressources/fxmls/client.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ressources/fxmls/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ressources/fxmls/main.fxml" beforeDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -184,23 +238,16 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-263112875">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ressources/fxmls/client.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -366,7 +413,7 @@
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543748632832" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="E:/mysql-connector-java-5.1.45-bin.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -531,13 +578,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20965000" />
+    <option name="totallyTimeSpent" value="21096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.2685325" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.26793557" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -748,6 +794,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
