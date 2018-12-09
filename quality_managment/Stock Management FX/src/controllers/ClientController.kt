@@ -39,8 +39,8 @@ class ClientController : Initializable {
     fun addClient() {
         val society = society.text.trim()
         val civility = civility.text.trim()
-        val firstName = firstName.text.trim()
-        val lastName = lastName.text.trim()
+        val firstNameVal = firstName.text.trim() // require
+        val lastNameVal = lastName.text.trim() // require
         val address = address.text.trim()
         val codePostal = codePostal.text.trim()
         val city = city.text.trim()
@@ -56,15 +56,25 @@ class ClientController : Initializable {
         val exemptTva = exemptTva.isSelected
         val observation = observation.text.trim()
 
-        if (validateData()) return
+        if (!validateData(firstNameVal, lastNameVal)) return
 
-        Database.addClient(society, civility, firstName, lastName, address, codePostal, city
+        Database.addClient(society, civility, firstNameVal, lastNameVal, address, codePostal, city
                 , pays, numTel, numMobile, fax, email, type, livreMmAddr, facMmAddr, exemptTva
                 , Database.user, java.sql.Date(Date().time), Database.user, java.sql.Date(Date().time), observation)
     }
 
-    private fun validateData(): Boolean {
-        return false
+    private fun validateData(firstNameVal: String, lastNameVal: String): Boolean {
+        if (firstNameVal.isEmpty()) {
+            firstName.style = "-fx-border-color: #FF0000"
+            firstName.requestFocus()
+            return false
+        }
+        if (lastNameVal.isEmpty()) {
+            lastName.style = "-fx-border-color: #FF0000"
+            lastName.requestFocus()
+            return false
+        }
+        return true
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
