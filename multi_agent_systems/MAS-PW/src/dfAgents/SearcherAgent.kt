@@ -10,18 +10,20 @@ import jade.domain.FIPAException
 import java.awt.FlowLayout
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
+import java.util.concurrent.Semaphore
 import javax.swing.JButton
 import javax.swing.JFrame
 import javax.swing.JLabel
 import javax.swing.JTextField
 
-class Searcher : Agent() {
+class SearcherAgent : Agent() {
 
-    lateinit var label: JLabel
-    lateinit var textField: JTextField
-    internal var flag = false
+    private lateinit var label: JLabel
+    private lateinit var textField: JTextField
     private lateinit var window: SearcherWindow
     private lateinit var serviceAgents: MutableList<AID>
+
+    private val semaphore = Semaphore(0)
 
     internal inner class SearcherWindow : JFrame(), ActionListener {
 
@@ -43,11 +45,12 @@ class Searcher : Agent() {
             endButton = JButton("Kill")
             container.add(endButton)
             endButton.addActionListener(this)
+            pack()
         }
 
         override fun actionPerformed(e: ActionEvent) {
             if (e.source === calculateButton)
-                flag = true
+                semaphore.release()
             else
                 doDelete()
         }
@@ -56,8 +59,7 @@ class Searcher : Agent() {
     override fun setup() {
         window = SearcherWindow()
         window.isVisible = true
-        while (!flag) {
-        }
+        semaphore.acquire()
 
         addBehaviour(object : TickerBehaviour(this, 10000) {
             override fun onTick() {

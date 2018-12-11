@@ -8,6 +8,7 @@ import jade.domain.FIPAException
 import java.awt.FlowLayout
 import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
+import java.util.concurrent.Semaphore
 import javax.swing.JButton
 import javax.swing.JFrame
 import javax.swing.JLabel
@@ -19,8 +20,9 @@ class ServiceAgent : Agent() {
     lateinit var labelTwo: JLabel
     lateinit var textFieldOne: JTextField
     lateinit var textFieldTwo: JTextField
-    var flag = false
     private lateinit var serviceWindow: ServiceWindow
+
+    private val semaphore = Semaphore(0)
 
     internal inner class ServiceWindow : JFrame(), ActionListener {
 
@@ -47,11 +49,12 @@ class ServiceAgent : Agent() {
             endButton = JButton("Deregister")
             container.add(endButton)
             endButton.addActionListener(this)
+            pack()
         }
 
         override fun actionPerformed(e: ActionEvent) {
             if (e.source === calculateButton)
-                flag = true
+                semaphore.release()
             else
                 doDelete()
         }
@@ -64,8 +67,8 @@ class ServiceAgent : Agent() {
         dfd.name = aid
         val sd = ServiceDescription()
 
-        while (!flag) {
-        }
+        semaphore.acquire()
+
         sd.type = textFieldOne.text
         sd.name = textFieldTwo.text
         dfd.addServices(sd)
