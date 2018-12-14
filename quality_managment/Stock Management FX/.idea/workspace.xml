@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Stock Managment/controllers/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock Managment/controllers/ClientController.class" afterDir="false" />
@@ -9,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/src/controllers/ClientController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ClientController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ressources/fxmls/client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ressources/fxmls/client.fxml" afterDir="false" />
     </list>
-
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -141,20 +139,19 @@
     <session id="-1404638603">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.63" value="1" />
-          <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.87" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="9" />
           <entry key="fxml" value="83" />
-          <entry key="kt" value="1616" />
+          <entry key="kt" value="1585" />
           <entry key="sql" value="23" />
           <entry key="txt" value="7" />
         </counts>
@@ -162,7 +159,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="9" />
-          <entry key="Kotlin" value="1615" />
+          <entry key="Kotlin" value="1584" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="SQL" value="1" />
           <entry key="Scratch" value="23" />
@@ -232,7 +229,6 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-
     <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controllers/ClientController.kt">
@@ -241,7 +237,6 @@
               <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
             </state>
           </provider>
-
         </entry>
       </file>
     </leaf>
@@ -287,13 +282,13 @@
         <option value="$PROJECT_DIR$/src/models/Client.kt" />
         <option value="$PROJECT_DIR$/src/controllers/LoginController.kt" />
         <option value="$PROJECT_DIR$/src/ressources/fxmls/login.fxml" />
+        <option value="$PROJECT_DIR$/src/ressources/fxmls/main.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/MainController.kt" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/657e797e-6561-45a5-936c-dc1254d1af24/console_1.sql" />
         <option value="$PROJECT_DIR$/src/ressources/css/login.css" />
         <option value="$PROJECT_DIR$/src/database/Database.kt" />
         <option value="$PROJECT_DIR$/src/ressources/fxmls/client.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/ClientController.kt" />
-        <option value="$PROJECT_DIR$/src/ressources/fxmls/main.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/MainController.kt" />
       </list>
     </option>
   </component>
@@ -339,7 +334,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -388,6 +382,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -565,24 +560,18 @@
       <workItem from="1543740325717" duration="8642000" />
       <workItem from="1543914135031" duration="27000" />
       <workItem from="1544130704149" duration="724000" />
-
       <workItem from="1544311640884" duration="234000" />
       <workItem from="1544345417597" duration="3882000" />
-
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-
     <option name="totallyTimeSpent" value="25212000" />
-
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.26793557" />
-
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -682,27 +671,22 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/657e797e-6561-45a5-936c-dc1254d1af24/console_1.sql" />
     <entry file="file://$PROJECT_DIR$/src/ressources/fxmls/main.fxml">
-
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding>
-            <element signature="e#21#399#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="392">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="43" column="18" lean-forward="true" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ressources/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-
     <entry file="file://$PROJECT_DIR$/src/controllers/LoginController.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -724,11 +708,9 @@
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.kt">
+    <entry file="file://$PROJECT_DIR$/src/ressources/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="52">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="20" />
         </state>
