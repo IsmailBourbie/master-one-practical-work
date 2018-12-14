@@ -1,5 +1,5 @@
 # Modules Abbreviations:
-* **A**C -> Algorithms Copmlexity.
+* **AC** -> Algorithms Copmlexity.
 * **DBA&DM** -> Advanced DataBase And DataMining.
 * **DBMS** -> Architecture and Administration of DBMS.
 * **MAS** -> Multi-Agent Systems.
