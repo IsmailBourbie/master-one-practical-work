@@ -37,3 +37,11 @@ DELETE FROM etu;
 
 /* Insert data in uv using CSV files */
 \copy uv (fketu, pkcode) FROM 'uvs.csv' WITH CSV DELIMITER ';'
+
+/* Question 04 */
+
+/* Get Number of all UV followed by a student */
+SELECT count(*) AS num_uvs FROM etu INNER JOIN uv ON pknumsecu = fketu WHERE knumetu = 'A';
+
+/* Get Number of all etu who subscribe in an uv */
+SELECT count(*) AS num_etus FROM uv INNER JOIN etu ON pknumsecu = fketu WHERE pkcode = 'NF17';
