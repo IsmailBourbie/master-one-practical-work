@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="525.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProductController">
+    <children>
+        <Label layoutX="302.0" layoutY="33.0" prefHeight="45.0" prefWidth="276.0" text="Product Manipulations" textAlignment="CENTER">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <VBox layoutX="54.0" layoutY="92.0" prefHeight="318.0" prefWidth="206.0" spacing="20">
+            <children>
+                <TextField fx:id="reference" promptText="Reference" />
+                <TextField fx:id="genCode" promptText="Gen Code" />
+                <TextField fx:id="codebar" promptText="Code Bar" />
+                <TextField fx:id="label" promptText="Label" />
+                <TextField fx:id="description" promptText="Description" />
+                <TextField fx:id="price" promptText="Price" />
+                <TextField fx:id="qtereppro" promptText="Qte Reappro" />
+            </children>
+        </VBox>
+        <VBox layoutX="323.0" layoutY="92.0" prefHeight="318.0" prefWidth="206.0" spacing="20">
+            <children>
+                <TextField fx:id="qtemini" promptText="Qte Mini" />
+                <TextField fx:id="tauxtva" promptText="Taux TVA" />
+                <TextField fx:id="photo" promptText="Photo" />
+                <TextField fx:id="supplierName" promptText="Supplier Name" />
+                <TextField fx:id="saisile" promptText="Saisi Le" />
+                <TextField fx:id="codeport" promptText="Code Port" />
+                <TextField fx:id="familycode" promptText="Familly Code" />
+            </children>
+        </VBox>
+        <VBox alignment="CENTER_LEFT" layoutX="580.0" layoutY="92.0" prefHeight="318.0" prefWidth="206.0" spacing="20">
+            <children>
+                <CheckBox fx:id="plusAuCatalogue" mnemonicParsing="false" text="Plus Au Catalogue" />
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" layoutX="95.0" layoutY="440.0" prefHeight="38.0" prefWidth="651.0" spacing="60">
+            <children>
+                <Button fx:id="newProduct" mnemonicParsing="false" prefHeight="37.0" prefWidth="96.0" text="Nouveau" />
+                <Button fx:id="saveProduct" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addClient" prefHeight="37.0" prefWidth="96.0" text="Enregistrer" />
+                <Button fx:id="editProduct" layoutX="106.0" layoutY="10.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="96.0" text="Modifier" />
+                <Button fx:id="deleteProduct" layoutX="202.0" layoutY="10.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="96.0" text="Supprimer" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
