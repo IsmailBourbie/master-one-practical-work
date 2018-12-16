@@ -9,7 +9,7 @@ import javafx.scene.control.TextField
 import java.net.URL
 import java.util.*
 
-class ProductController : Initializable {
+class FactureController : Initializable {
 
     @FXML
     lateinit var firstName: TextField
