@@ -33,9 +33,17 @@ class LaunchJade {
         }
 
         try {
-            val service = mc?.createNewAgent("Service-Agent", ServiceAgent::class.java.name,
+            val serviceOne = mc?.createNewAgent("Service-Agent-One", ServiceAgent::class.java.name,
                     arrayOf<Any>())
-            service?.start()
+            val serviceTwo = mc?.createNewAgent("Service-Agent-Two", ServiceAgent::class.java.name,
+                    arrayOf<Any>())
+            val serviceThree = mc?.createNewAgent("Service-Agent-Three", ServiceAgent::class.java.name,
+                    arrayOf<Any>())
+
+            serviceOne?.start()
+            serviceTwo?.start()
+            serviceThree?.start()
+
             val searcher = mc?.createNewAgent("Sercher-Agent", SearcherAgent::class.java.name,
                     arrayOf<Any>())
             searcher?.start()
