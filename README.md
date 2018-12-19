@@ -4,3 +4,4 @@
 * **DBMS** -> Architecture and Administration of DBMS.
 * **MAS** -> Multi-Agent Systems.
 * **QM** -> Quality Management.
+* **SE** -> Software Engineering.
