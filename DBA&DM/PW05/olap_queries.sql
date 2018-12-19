@@ -1,0 +1,78 @@
+-- Simple SELECT
+SELECT *
+FROM CUSTOMER
+WHERE C_NATION LIKE 'ALGERIA';
+
+-- query for explain the plan of the query
+EXPLAIN PLAN FOR SELECT *
+                 FROM CUSTOMER
+                 WHERE C_NATION LIKE 'ALGERIA';
+
+-- Show The Plan
+SELECT PLAN_TABLE_OUTPUT
+FROM TABLE (DBMS_XPLAN.DISPLAY());
+
+-- Index Creation
+CREATE INDEX hiIndex
+  ON CUSTOMER (C_NATION);
+
+-- select using Index
+SELECT /*+ INDEX(CUSTOMER hiIndex) */ *
+FROM CUSTOMER
+WHERE C_NATION LIKE 'ALGERIA';
+
+EXPLAIN PLAN For SELECT /*+ INDEX(CUSTOMER hiIndex) */ *
+FROM CUSTOMER
+WHERE C_NATION LIKE 'ALGERIA';
+
+
+CREATE BITMAP INDEX goIndex
+  ON CUSTOMER (C_NATION);
+DROP INDEX goIndex;
+DROP INDEX hiIndex;
+
+-- query for explain the plan of the query
+EXPLAIN PLAN FOR SELECT /*+ INDEX(CUSTOMER goIndex) */ *
+                 FROM CUSTOMER
+                 WHERE C_NATION LIKE 'ALGERIA';
+
+SELECT PLAN_TABLE_OUTPUT
+FROM TABLE (DBMS_XPLAN.DISPLAY());
+
+SELECT DISTINCT INDEX_TYPE
+FROM all_indexes;
+
+-- noinspection SqlResolveForFile
+
+-- Simple SELECT
+SELECT *
+FROM CUSTOMER
+WHERE C_NATION LIKE 'ALGERIA';
+
+-- query for explain the plan of the query
+EXPLAIN PLAN FOR SELECT /*+ INDEX(CUSTOMER bTreeIndex) */ *
+FROM CUSTOMER
+WHERE C_NATION LIKE 'ALGERIA';
+
+SELECT PLAN_TABLE_OUTPUT
+FROM TABLE (DBMS_XPLAN.DISPLAY());
+
+-- Simple B-Tree Index Creation.
+CREATE INDEX bTreeIndex ON CUSTOMER (C_NATION);
+
+-- Bitmap B-Tree Index Creation.
+CREATE BITMAP INDEX bitmapIndex ON CUSTOMER (C_NATION);
+
+
+-- select using Index
+SELECT /*+ INDEX(CUSTOMER bTreeIndex) */ *
+FROM CUSTOMER
+WHERE C_NATION LIKE 'ALGERIA';
+
+-- select using Index
+SELECT /*+ INDEX(CUSTOMER bitmapIndex) */ *
+FROM CUSTOMER
+WHERE C_NATION LIKE 'ALGERIA';
+
+DROP INDEX bTreeIndex;
+DROP INDEX bitmapIndex;
