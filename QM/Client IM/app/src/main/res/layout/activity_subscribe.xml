@@ -14,125 +14,142 @@
         tools:context="com.databrains.bi4ss.activities.SubscribeActivity">
 
         <EditText
+            android:id="@+id/society_et"
             android:layout_width="match_parent"
-            android:inputType="text"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:hint="@string/society" />
+            android:hint="@string/society"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/civility_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/civility"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/fname_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/first_name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/lname_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/last_name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/address_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/adress"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/postalcode_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/postal_code"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/city_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/city"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/country_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/country"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/phone_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/phone"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/mobile_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/mobile"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/fax_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/fax"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/mail_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
             android:layout_marginBottom="4dp"
-            android:hint="@string/civility" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/first_name" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:inputType="text"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/last_name" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/adress" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:inputType="number"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/postal_code" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/city" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:inputType="text"
-            android:hint="@string/country" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/phone" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:inputType="phone"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/mobile" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/fax" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/email" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:layout_marginBottom="4dp"
-            android:hint="@string/type" />
+            android:hint="@string/type"
+            android:id="@+id/type_et"
+            android:inputType="text" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
+            android:id="@+id/livreSameAddress_radio"
             android:text="@string/livre_same_address" />
 
         <RadioButton
             android:layout_width="wrap_content"
+            android:id="@+id/factureSameAddress_radio"
             android:layout_height="wrap_content"
             android:text="Facture Same Address" />
 
         <RadioButton
             android:layout_width="wrap_content"
+            android:id="@+id/exemptTva_radio"
             android:layout_height="wrap_content"
             android:text="@string/exempt_tva" />
 
         <EditText
+            android:id="@+id/observation_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:inputType="text"
             android:hint="@string/observation"
-             />
+            android:inputType="text" />
 
         <Button
             android:layout_width="wrap_content"
+            android:id="@+id/done_subscribe_button"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/subscribe"
-            android:layout_height="wrap_content" />
+            android:text="@string/subscribe" />
 
     </LinearLayout>
 </ScrollView>
