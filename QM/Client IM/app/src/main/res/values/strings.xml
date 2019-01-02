@@ -1,4 +1,21 @@
 <resources>
-    <string name="app_name">BI4SS</string>
+    <string name="app_name">Client App</string>
     <string name="action_settings">Settings</string>
+    <string name="observation">Observation</string>
+    <string name="exempt_tva">Exempt Tva</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="society">Society</string>
+    <string name="civility">Civility</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="adress">Address</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="phone">Phone</string>
+    <string name="mobile">Mobile</string>
+    <string name="fax">Fax</string>
+    <string name="email">Email</string>
+    <string name="type">Type</string>
+    <string name="livre_same_address">Livre Same Address</string>
 </resources>
