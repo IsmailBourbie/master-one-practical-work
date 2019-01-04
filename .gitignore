@@ -11,4 +11,4 @@ load_salaries.dump
 /build
 /captures
 .externalNativeBuild
-/logs
+QM/Server/logs/**
