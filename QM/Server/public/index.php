@@ -17,8 +17,5 @@ $router = new Core\Router();
 // add router with controller: Clients, Action: add and the POST request
 $router->post('clients', ['controller' => 'Clients', 'action' => 'add']);
 
-
-
-
 $url = rtrim($_SERVER['QUERY_STRING'], '/');
 $router->dispatch($url, $_SERVER['REQUEST_METHOD']);
