@@ -14,11 +14,9 @@ set_exception_handler('Core\Error::exceptionHandler');
 /** @var \Core\Router $router */
 $router = new Core\Router();
 
-// router with controller: Profile, Id: dynamic, Action: Index and the GET request
-$router->get('profile/{id:\d+}', ['controller' => 'Profile', 'action' => 'index']);
+// add router with controller: Clients, Action: add and the POST request
+$router->post('clients', ['controller' => 'Clients', 'action' => 'add']);
 
-// router with controller: Profile, Action: Index and the POST request
-$router->post('profile', ['controller' => 'Profile', 'action' => 'index']);
 
 
 

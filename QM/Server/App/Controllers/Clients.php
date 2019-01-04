@@ -5,15 +5,20 @@ namespace App\Controllers;
 use Core\Controller;
 use Core\View;
 
-class Profile extends Controller {
-    public function indexAction()
+class Clients extends Controller {
+    public function addAction()
     {
         $data = [
-            'title' => 'Profile',
-            'status' => 200,
-            'data' => ['red', 'green', 'blue'],
+            'fname' => $_POST['fname'],
+            'lname' => $_POST['lname'],
+            'address' => $_POST['address'],
         ];
-        View::render("Profile/index.php", $data);
+        $response = [
+            'title' => 'Clients',
+            'status' => 200,
+            'data' => $data,
+        ];
+        View::render("Clients/index.php", $response);
     }
 
 

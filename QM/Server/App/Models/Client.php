@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Core\Model;
 
-class Post extends Model {
+class Client extends Model {
    public static function getAll() {
       try {
          $db = static::getDB();
