@@ -1,0 +1,50 @@
+* {
+    -fx-font-family: tahoma arial;
+}
+
+.lbl-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888;
+}
+
+.field {
+    -fx-font-size: 20px;
+    -fx-prompt-text-fill: #888;
+    -jfx-unfocus-color: #51f393;
+    -jfx-focus-color: #4af398
+}
+
+.checkbox:hover {
+    -fx-cursor: hand
+}
+
+.btn {
+    -fx-font-size: 22px;
+    -fx-background-color: #00ff4d;
+    -fx-text-fill: #FFF;
+    -fx-background-radius: 5
+}
+
+.btn:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #2bf355
+}
+
+.footer-text {
+    -fx-font-size: 18px;
+    -fx-text-fill: #666
+}
+
+/* Start JFXSnackBar (toast msg) */
+
+.jfx-snackbar-content {
+    -fx-background-color: #ff5559;
+    -fx-pref-width: 460
+}
+.jfx-snackbar-toast {
+    -fx-text-fill: #FFF;
+    -fx-font-size: 18px;
+    -fx-font-family: Tahoma
+}
+
+/* End JFXSnackBar (toast msg) */

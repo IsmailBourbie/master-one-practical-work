@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.Button?>
+<StackPane fx:id="root" prefHeight="620.0" prefWidth="1300.0" stylesheets="@../css/crud-view.css"
+           xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="inventory.controllers.ClientController">
+    <children>
+        <VBox spacing="20.0">
+            <children>
+                <Label styleClass="title" text="Clients"/>
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+
+                        <Button  onAction="#onAdd" text="Add">
+                            <styleClass>
+                                <String fx:value="btn"/>
+                                <String fx:value="btn-add"/>
+                            </styleClass>
+                        </Button>
+                        <Button  onAction="#onEdit" text="Modify">
+                            <styleClass>
+                                <String fx:value="btn"/>
+                                <String fx:value="btn-edit"/>
+                            </styleClass>
+                        </Button>
+                        <Button  onAction="#onDelete" text="Delete">
+                            <styleClass>
+                                <String fx:value="btn"/>
+                                <String fx:value="btn-delete"/>
+                            </styleClass>
+                        </Button>
+                    </children>
+                </HBox>
+                <JFXTreeTableView fx:id="tableClient" VBox.vgrow="ALWAYS"/>
+            </children>
+            <StackPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="10.0"/>
+            </StackPane.margin>
+        </VBox>
+    </children>
+</StackPane>
