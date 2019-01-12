@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -14,7 +12,7 @@
             <children>
                 <HBox alignment="CENTER">
                     <children>
-                        <Label styleClass="title" text="Facture REC"/>
+
                     </children>
                 </HBox>
                 <StackPane>
@@ -24,8 +22,7 @@
                                 <StackPane>
                                     <children>
                                         <Label styleClass="sub-title" text="Client" StackPane.alignment="CENTER_LEFT"/>
-                                        <FontAwesomeIconView glyphName="EDIT" onMouseClicked="#onChooseClient" size="25"
-                                                             styleClass="icon" StackPane.alignment="CENTER_RIGHT"/>
+
                                     </children>
                                 </StackPane>
                                 <GridPane hgap="10.0" vgap="10.0">
@@ -42,22 +39,22 @@
                                                         vgrow="SOMETIMES"/>
                                     </rowConstraints>
                                     <children>
-                                        <JFXTextField fx:id="fieldNumClient" editable="false" styleClass="field"
-                                                      GridPane.columnIndex="1"/>
-                                        <JFXTextField fx:id="fieldNomClient" editable="false" styleClass="field"
-                                                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                                        <JFXTextField fx:id="fieldPrenomClient" editable="false" styleClass="field"
-                                                      GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                                        <Label styleClass="lbl" text="Numero :"/>
-                                        <Label styleClass="lbl" text="Nom :" GridPane.rowIndex="1"/>
-                                        <Label styleClass="lbl" text="Prenom :" GridPane.rowIndex="2"/>
+                                        <TextField fx:id="fieldNumClient" onMouseClicked="#onChooseClient" editable="false" styleClass="field"
+                                                   GridPane.columnIndex="1"/>
+                                        <TextField fx:id="fieldNomClient" editable="false" styleClass="field"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <TextField fx:id="fieldPrenomClient" editable="false" styleClass="field"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                        <Label styleClass="lbl" text="Number :"/>
+                                        <Label styleClass="lbl" text="Name :" GridPane.rowIndex="1"/>
+                                        <Label styleClass="lbl" text="Last Name :" GridPane.rowIndex="2"/>
                                     </children>
                                 </GridPane>
                             </children>
                         </VBox>
                         <VBox maxWidth="-Infinity" spacing="10.0" styleClass="cards" StackPane.alignment="TOP_CENTER">
                             <children>
-                                <Label styleClass="sub-title" text="Facture Information"/>
+                                <Label styleClass="sub-title" text="Order Information"/>
                                 <GridPane hgap="10.0" vgap="10.0">
                                     <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
@@ -70,12 +67,12 @@
                                                         vgrow="SOMETIMES"/>
                                     </rowConstraints>
                                     <children>
-                                        <JFXTextField fx:id="fieldNumFacture" editable="false" styleClass="field"
-                                                      GridPane.columnIndex="1"/>
-                                        <Label styleClass="lbl" text="N° facture :"/>
+                                        <TextField fx:id="fieldNumFacture" editable="false" styleClass="field"
+                                                   GridPane.columnIndex="1"/>
+                                        <Label styleClass="lbl" text="N° Order:"/>
                                         <Label styleClass="lbl" text="Date :" GridPane.rowIndex="1"/>
-                                        <JFXDatePicker fx:id="pickerDate" editable="false" styleClass="field"
-                                                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <DatePicker fx:id="pickerDate" editable="false" styleClass="field"
+                                                    GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                                     </children>
                                 </GridPane>
                             </children>
@@ -83,58 +80,52 @@
                         <VBox maxWidth="-Infinity" spacing="10.0" styleClass="cards" StackPane.alignment="TOP_RIGHT">
                             <children>
                                 <Label styleClass="sub-title" text="Observations"/>
-                                <JFXTextArea fx:id="areaObservations" maxHeight="-Infinity" maxWidth="-Infinity"
-                                             prefHeight="110.0" prefWidth="270.0"
-                                             promptText="Taper votre observations .." style="-fx-pref-height: 110;"
-                                             styleClass="field"/>
+                                <TextArea fx:id="areaObservations" maxHeight="-Infinity" maxWidth="-Infinity"
+                                          prefHeight="110.0" prefWidth="270.0"
+                                          promptText="Tape down your obersrvation" style="-fx-pref-height: 110;"
+                                          styleClass="field"/>
                             </children>
                         </VBox>
                     </children>
                 </StackPane>
-                <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                <VBox spacing="10.0" VBox.vgrow="ALWAYS">
                     <children>
-                        <JFXTreeTableView fx:id="tableProduit" maxHeight="-Infinity" prefHeight="220.0"
-                                          prefWidth="730.0"/>
-                        <VBox alignment="TOP_RIGHT" spacing="10.0">
+                        <TreeTableView fx:id="tableProduit" maxHeight="-Infinity" prefHeight="220.0"
+                                       prefWidth="730.0"/>
+                        <HBox alignment="CENTER" spacing="10.0">
                             <children>
-                                <JFXButton onAction="#onAdd" text="Nouveau">
+                                <Button onAction="#onAdd" text="New">
                                     <styleClass>
                                         <String fx:value="btn"/>
                                         <String fx:value="btn-add"/>
                                     </styleClass>
-                                </JFXButton>
-                                <JFXButton onAction="#onDelete" text="Supprimer">
+                                </Button>
+                                <Button onAction="#onDelete" text="Delete">
                                     <styleClass>
                                         <String fx:value="btn"/>
                                         <String fx:value="btn-delete"/>
                                     </styleClass>
-                                </JFXButton>
-                                <HBox spacing="22.0">
-                                    <children>
-                                        <JFXTextField fx:id="fieldQte" labelFloat="true" prefWidth="80.0"
-                                                      promptText="Quantité" style="-fx-font-size: 19;"
-                                                      styleClass="field"/>
-                                        <JFXTextField fx:id="fieldRemise" labelFloat="true" prefWidth="80.0"
-                                                      promptText="Remise" style="-fx-font-size: 19;"
-                                                      styleClass="field"/>
-                                        <JFXButton onAction="#onEdit" text="Modifier">
-                                            <styleClass>
-                                                <String fx:value="btn"/>
-                                                <String fx:value="btn-detail"/>
-                                            </styleClass>
-                                        </JFXButton>
-                                    </children>
-                                </HBox>
-                                <JFXButton onAction="#onPrint" text="Imprimer">
+                                </Button>
+                                <Button onAction="#onEdit" text="Modify">
                                     <styleClass>
                                         <String fx:value="btn"/>
-                                        <String fx:value="btn-print"/>
+                                        <String fx:value="btn-detail"/>
                                     </styleClass>
-                                </JFXButton>
+                                </Button>
+                                <HBox spacing="22.0">
+                                    <children>
+                                        <TextField fx:id="fieldQte" prefWidth="80.0"
+                                                   promptText="Quantity" style="-fx-font-size: 19;"
+                                                   styleClass="field"/>
+                                        <TextField fx:id="fieldRemise" prefWidth="80.0"
+                                                   promptText="Remise" style="-fx-font-size: 19;"
+                                                   styleClass="field"/>
+                                    </children>
+                                </HBox>
                             </children>
-                        </VBox>
+                        </HBox>
                     </children>
-                </HBox>
+                </VBox>
                 <StackPane>
                     <children>
                         <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" spacing="10.0" styleClass="cards"
@@ -151,11 +142,11 @@
                                     </rowConstraints>
                                     <children>
                                         <Label styleClass="lbl" text="Mode Reglement :"/>
-                                        <JFXComboBox fx:id="comboModeReg" maxWidth="1.7976931348623157E308"
-                                                     styleClass="field" GridPane.columnIndex="1"/>
+                                        <ComboBox fx:id="comboModeReg" maxWidth="1.7976931348623157E308"
+                                                  styleClass="field" GridPane.columnIndex="1"/>
                                         <Label styleClass="lbl" text="N° :" GridPane.rowIndex="1"/>
-                                        <JFXTextField fx:id="fieldNumModePayement" styleClass="field"
-                                                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <TextField fx:id="fieldNumModePayement" styleClass="field"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                                     </children>
                                 </GridPane>
                             </children>
@@ -176,15 +167,15 @@
                                                         vgrow="SOMETIMES"/>
                                     </rowConstraints>
                                     <children>
-                                        <JFXTextField fx:id="fieldTotalHT" editable="false" styleClass="field"
-                                                      text="0.0" GridPane.columnIndex="1"/>
-                                        <JFXTextField fx:id="fieldTotalTVA" editable="false" styleClass="field"
-                                                      text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <TextField fx:id="fieldTotalHT" editable="false" styleClass="field"
+                                                   text="0.0" GridPane.columnIndex="1"/>
+                                        <TextField fx:id="fieldTotalTVA" editable="false" styleClass="field"
+                                                   text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                                         <Label styleClass="lbl" text="Total HT :"/>
                                         <Label styleClass="lbl" text="Total TVA :" GridPane.rowIndex="1"/>
                                         <Label styleClass="lbl" text="Total TTC :" GridPane.rowIndex="2"/>
-                                        <JFXTextField fx:id="fieldTotalTTC" editable="false" styleClass="field"
-                                                      text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                        <TextField fx:id="fieldTotalTTC" editable="false" styleClass="field"
+                                                   text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                                     </children>
                                 </GridPane>
                             </children>
@@ -192,36 +183,12 @@
                         <HBox maxHeight="-Infinity" maxWidth="-Infinity" spacing="15.0"
                               StackPane.alignment="BOTTOM_CENTER">
                             <children>
-                                <JFXButton buttonType="RAISED" graphicTextGap="0.0" onAction="#onMoveToFirst"
-                                           styleClass="btn-icon" text=" ">
-                                    <graphic>
-                                        <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_DOUBLE_LEFT" size="26"/>
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton buttonType="RAISED" graphicTextGap="0.0" onAction="#onMoveToPrevious"
-                                           styleClass="btn-icon" text=" ">
-                                    <graphic>
-                                        <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_LEFT" size="26"/>
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton buttonType="RAISED" onAction="#onSave" text="Enregistrer">
+                                <Button onAction="#onSave" text="Save">
                                     <styleClass>
                                         <String fx:value="btn"/>
                                         <String fx:value="btn-add"/>
                                     </styleClass>
-                                </JFXButton>
-                                <JFXButton buttonType="RAISED" graphicTextGap="0.0" onAction="#onMoveToNext"
-                                           styleClass="btn-icon" text=" ">
-                                    <graphic>
-                                        <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_RIGHT" size="26"/>
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton buttonType="RAISED" graphicTextGap="0.0" onAction="#onMoveToEnd"
-                                           styleClass="btn-icon" text=" ">
-                                    <graphic>
-                                        <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_DOUBLE_RIGHT" size="26"/>
-                                    </graphic>
-                                </JFXButton>
+                                </Button>
                             </children>
                         </HBox>
                     </children>

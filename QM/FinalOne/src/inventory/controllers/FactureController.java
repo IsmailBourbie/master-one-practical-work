@@ -7,7 +7,6 @@ import inventory.database.dao.ReglementDao;
 import inventory.database.dao.StockDao;
 import inventory.database.models.*;
 
-import inventory.database.models.*;
 import inventory.database.models.designpatterns.builder.FactureBuilder;
 import inventory.database.models.designpatterns.builder.LigneFactureBuilder;
 import inventory.database.models.designpatterns.builder.ReglementBuilder;
@@ -22,8 +21,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -40,7 +38,7 @@ public class FactureController implements Initializable {
     /* Start Client */
 
     @FXML
-    private JFXTextField fieldNumClient, fieldNomClient, fieldPrenomClient;
+    private TextField fieldNumClient, fieldNomClient, fieldPrenomClient;
 
     public static Client selectedClient;
 
@@ -51,24 +49,24 @@ public class FactureController implements Initializable {
     /* End Client */
 
     @FXML
-    private JFXTextArea areaObservations;
+    private TextArea areaObservations;
 
     /* Start Facture Infos */
 
     @FXML
-    private JFXTextField fieldNumFacture;
+    private TextField fieldNumFacture;
 
     @FXML
-    private JFXDatePicker pickerDate;
+    private DatePicker pickerDate;
 
     /* End Facture Infos */
 
     /* Start Product Table */
 
     @FXML
-    private JFXTreeTableView tableProduit;
+    private TreeTableView tableProduit;
 
-    private JFXTreeTableColumn<TableProduit, String> colRef, colDesignation, colQte, colPU, colRemise, colMHT, colTVA, colMTTC;
+    private TreeTableColumn<TableProduit, String> colRef, colDesignation, colQte, colPU, colRemise, colMHT, colTVA, colMTTC;
 
     // Data of Table
     public static ObservableList<TableProduit> listProduits;
@@ -78,7 +76,7 @@ public class FactureController implements Initializable {
     /* Start Product Form infos */
 
     @FXML
-    private JFXTextField fieldRemise, fieldQte;
+    private TextField fieldRemise, fieldQte;
 
     public static Produit selectedProduit;
 
@@ -91,10 +89,10 @@ public class FactureController implements Initializable {
     /* Start Mode Reglement */
 
     @FXML
-    private JFXTextField fieldNumModePayement;
+    private TextField fieldNumModePayement;
 
     @FXML
-    private JFXComboBox<String> comboModeReg;
+    private ComboBox<String> comboModeReg;
 
     // Get it from database
     private List<ModeReglement> modeReglements;
@@ -103,14 +101,12 @@ public class FactureController implements Initializable {
 
     // Total Montant Infos
     @FXML
-    private JFXTextField fieldTotalHT, fieldTotalTVA, fieldTotalTTC;
+    private TextField fieldTotalHT, fieldTotalTVA, fieldTotalTTC;
 
-    // Error message showing in time limited (like toast in android)
-    private JFXSnackbar toastMsg;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        toastMsg = new JFXSnackbar(root);
+
 
         // Get Auto increment facture number from db
         fieldNumFacture.setText(String.valueOf(MainDao.getCurrentAutoIncrement("Facture")));
@@ -294,7 +290,7 @@ public class FactureController implements Initializable {
     private void onAdd() {
         // Load Select Produit View
         try {
-            selectProduitView = FXMLLoader.load(getClass().getResource("/com/houarizegai/gestioncommercial/resources/views/forms/facture/SelectProduit.fxml"));
+            selectProduitView = FXMLLoader.load(getClass().getResource("/resources/views/forms/facture/SelectProduit.fxml"));
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
@@ -318,7 +314,7 @@ public class FactureController implements Initializable {
     @FXML
     private void onDelete() { // delete product
         if (tableProduit.getSelectionModel().getSelectedItem() == null) {
-            toastMsg.show("Svp, selectionnée le produit qui vous voulez supprimer !", 2000);
+            System.out.println("Please choose a products.");
             return;
         }
 
@@ -337,7 +333,7 @@ public class FactureController implements Initializable {
     @FXML
     private void onEdit() { // Edit Qte of product
         if (tableProduit.getSelectionModel().getSelectedItem() == null) {
-            toastMsg.show("Svp, selectionnée le produit qui vous voulez modifier !", 2000);
+            System.out.println("Please choose a product");
             return;
         }
 
@@ -345,11 +341,11 @@ public class FactureController implements Initializable {
         String remise = fieldRemise.getText() == null ? "0" : fieldRemise.getText().trim();
 
         if (!qte.matches("[0-9]{1,3}")) {
-            toastMsg.show("Svp, taper le quantité dans ce form: nombre entre 0 et 999", 2000);
+            System.out.println("Quanitity myust be from 0 to 999");
             return;
         }
         if (!remise.trim().matches(ProduitRegex.PRIX_HT) || Double.parseDouble(remise) > 100d) {
-            toastMsg.show("Svp, taper le remise dans ce form: nombre entre 0 et 100", 2000);
+            System.out.println("Please enter a remise");
             return;
         }
 
@@ -428,11 +424,13 @@ public class FactureController implements Initializable {
     @FXML
     private void onSave() {
         if (fieldNumClient.getText() == null || fieldNumClient.getText().isEmpty()) {
-            toastMsg.show("Svp, selectionné le client", 2000);
+            System.out.println("Please choose a client");
+
             return;
         }
         if(fieldNumModePayement.getText() != null && !fieldNumModePayement.getText().trim().matches("[0-9]{1,30}")) {
-            toastMsg.show("Svp, taper un nombre dans le numero de mode reglement !", 2000);
+            System.out.println("Please enter a number");
+
             return;
         }
 
@@ -465,13 +463,13 @@ public class FactureController implements Initializable {
 
         switch (status) {
             case -1:
-                toastMsg.show("Erreur de connexion !", 2000);
+                System.out.println("Connection error");
                 break;
             case 0:
-                toastMsg.show("Erreur dans la sauvgarde de facture !", 2000);
+                System.out.println("Error in the saving");
                 break;
             default:
-                toastMsg.show("Vous avez ajouter une nouvelle facture !", 2000);
+                System.out.println("Done!");
 
                 // Update Stock in database
                 //updateStockAfterFactureAdded();
@@ -490,10 +488,11 @@ public class FactureController implements Initializable {
                     status = ReglementDao.addReglement(reglement);
                     switch (status) {
                         case -1:
-                            toastMsg.show("Erreur de connexion !", 2000);
+                            System.out.println("Error in saving");
                             return;
                         case 0:
-                            toastMsg.show("Erreur dans la sauvgarde de reglement !", 2000);
+                            System.out.println("Error of saving reglement");
+
                             break;
                     }
                 }

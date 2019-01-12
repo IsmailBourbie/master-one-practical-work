@@ -6,12 +6,12 @@
 
 .title {
     -fx-font-size: 32px;
-    -fx-text-fill: linear-gradient(from 0 0 to 100px 100px, #00ff4d, #5bf3a9)
+    -fx-text-fill: #00ff4d
 }
 
 .sub-title {
     -fx-font-size: 19px;
-    -fx-text-fill: linear-gradient(from 0 0 to 100px 100px, #00aacf, cyan)
+    -fx-text-fill: #00ff4d
 }
 
 .field {
