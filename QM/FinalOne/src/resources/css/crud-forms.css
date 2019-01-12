@@ -1,12 +1,12 @@
 /* CRUD (Create, Read, Update, Delete) Forms */
 
 * {
-    -fx-font-family: Tahoma, Arial, "Comic Sans MS";
+    -fx-font-family: Cairo, Cairo, "Cairo";
 }
 
 .title {
     -fx-font-size: 28px;
-    -fx-text-fill: linear-gradient(from 0 0 to 100px 100px, #0f9d58, #5a5a5a)
+    -fx-text-fill: #0f9d58
 }
 
 .title-delete {

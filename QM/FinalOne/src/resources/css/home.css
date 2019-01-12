@@ -1,5 +1,5 @@
 * {
-    -fx-font-family: tahoma, arial, "Cairo"
+    -fx-font-family: Cairo, Cairo, "Cairo"
 }
 
 .slider-title {
@@ -30,7 +30,7 @@
 
 .cards-title {
     -fx-font-size: 22px;
-    -fx-text-fill: linear-gradient(from 0 0 to 100px 100px, #36f33b, #333)
+    -fx-text-fill: #36f33b
 }
 
 .cards-desc {

@@ -1,130 +1,90 @@
 package inventory.controllers.forms.produit;
 
-import inventory.Launcher;
 import inventory.controllers.ProduitController;
 import inventory.database.DBConnection;
 import inventory.database.dao.*;
-
 import inventory.database.models.Fournisseur;
 import inventory.database.models.FraisPort;
 import inventory.database.models.Produit;
 import inventory.database.models.designpatterns.builder.ProduitBuilder;
 import inventory.utils.regex.ProduitRegex;
-import com.jfoenix.controls.*;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
-import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
-import java.io.*;
 import java.net.URL;
 import java.util.Date;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AddProduitController implements Initializable {
-    @FXML
-    private VBox root;
+
 
     @FXML
-    private JFXTextField fieldReference, fieldCodeBarre, fieldLibProd, fieldPrixHT, fieldGenCode, fieldQteMin, fieldQteReappro;
+    private TextField fieldReference, fieldCodeBarre, fieldLibProd, fieldPrixHT, fieldGenCode, fieldQteMin, fieldQteReappro;
+
 
     @FXML
-    private FontAwesomeIconView iconReference, iconGenCode, iconCodeBarre, iconLibProd, iconPrixHT, iconQteReappro, iconQteMin;
+    private TextArea areaDesc;
 
     @FXML
-    private JFXTextArea areaDesc;
+    private ComboBox<String> comboTauxTva, comboFamille, comboPort, comboFournisseur;
 
     @FXML
-    private JFXComboBox<String> comboTauxTva, comboFamille, comboPort, comboFournisseur;
+    private CheckBox tglPlusAuCatalogue;
 
-    @FXML
-    private JFXToggleButton tglPlusAuCatalogue;
 
-    @FXML // image of produit, imported from PC (image chooser)
-    private ImageView imageProduit;
-
-    private JFXSnackbar toastMsg;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        toastMsg = new JFXSnackbar(root);
         initCombos();
         initFieldListener();
     }
 
     private void initCombos() {
-        for(double taux : Objects.requireNonNull(TVADao.getTauxTva())) // get Taux TVA from db
+        for (double taux : Objects.requireNonNull(TVADao.getTauxTva())) // get Taux TVA from db
             comboTauxTva.getItems().add(String.valueOf(taux));
 
-        for(FraisPort port : Objects.requireNonNull(FraisPortDao.getFraisPorts())) // get Frais port from db
+        for (FraisPort port : Objects.requireNonNull(FraisPortDao.getFraisPorts())) // get Frais port from db
             comboPort.getItems().add(port.getLibFraisPort());
 
-        for(String[] f : Objects.requireNonNull(FamilleDao.getFamilles())) // get Familles from db
+        for (String[] f : Objects.requireNonNull(FamilleDao.getFamilles())) // get Familles from db
             comboFamille.getItems().add(String.valueOf(f[1]));
 
-        for(Fournisseur f : Objects.requireNonNull(FournisseurDao.getFournisseur()))
+        for (Fournisseur f : Objects.requireNonNull(FournisseurDao.getFournisseur()))
             comboFournisseur.getItems().add(f.getNumFournisseur() + " " + f.getNom() + " " + f.getPrenom());
     }
 
     private void initFieldListener() {
-        fieldReference.textProperty().addListener((observable, oldValue, newValue) -> setValidFontRequired(fieldReference, iconReference, newValue, ProduitRegex.REFERENCE));
-        fieldGenCode.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldGenCode, iconGenCode, newValue, ProduitRegex.GEN_CODE));
-        fieldCodeBarre.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldCodeBarre, iconCodeBarre, newValue, ProduitRegex.CODE_BARRE));
-        fieldLibProd.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldLibProd, iconLibProd, newValue, ProduitRegex.LIB_PROD));
-        fieldPrixHT.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldPrixHT, iconPrixHT, newValue, ProduitRegex.PRIX_HT));
-        fieldQteReappro.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldQteReappro, iconQteReappro, newValue, ProduitRegex.QTE_REAPPRO));
-        fieldQteMin.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldQteMin, iconQteMin, newValue, ProduitRegex.QTE_MIN));
+        fieldReference.textProperty().addListener((observable, oldValue, newValue) -> setValidFontRequired(fieldReference, newValue, ProduitRegex.REFERENCE));
+        fieldGenCode.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldGenCode, newValue, ProduitRegex.GEN_CODE));
+        fieldCodeBarre.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldCodeBarre, newValue, ProduitRegex.CODE_BARRE));
+        fieldLibProd.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldLibProd, newValue, ProduitRegex.LIB_PROD));
+        fieldPrixHT.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldPrixHT, newValue, ProduitRegex.PRIX_HT));
+        fieldQteReappro.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldQteReappro, newValue, ProduitRegex.QTE_REAPPRO));
+        fieldQteMin.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldQteMin, newValue, ProduitRegex.QTE_MIN));
     }
 
-    private void setValidFont(JFXTextField field, FontAwesomeIconView errorIcon, String newValue, String regex) { // Change the font if not valid or reset color
-        if(newValue != null && !newValue.trim().isEmpty() && !newValue.trim().matches(regex)) {
-            field.setStyle("-jfx-un-focus-color: #E00; -jfx-focus-color: #D00;");
-            errorIcon.setVisible(true);
+    private void setValidFont(TextField field, String newValue, String regex) { // Change the font if not valid or reset color
+        if (newValue != null && !newValue.trim().isEmpty() && !newValue.trim().matches(regex)) {
+            field.setStyle("--un-focus-color: #E00; --focus-color: #D00;");
         } else {
-            field.setStyle("-jfx-un-focus-color: #777; -jfx-focus-color: #0f9d58;");
-            errorIcon.setVisible(false);
+            field.setStyle("--un-focus-color: #777; --focus-color: #0f9d58;");
         }
     }
 
-    private void setValidFontRequired(JFXTextField field, FontAwesomeIconView errorIcon, String newValue, String regex) {
-        if(newValue == null || !newValue.trim().matches(regex)) {
-            field.setStyle("-jfx-un-focus-color: #E00; -jfx-focus-color: #D00;");
-            errorIcon.setVisible(true);
+    private void setValidFontRequired(TextField field, String newValue, String regex) {
+        if (newValue == null || !newValue.trim().matches(regex)) {
+            field.setStyle("--un-focus-color: #E00; --focus-color: #D00;");
         } else {
-            field.setStyle("-jfx-un-focus-color: #777; -jfx-focus-color: #0f9d58;");
-            errorIcon.setVisible(false);
-        }
-    }
-
-    @FXML
-    void onChooseImage() { // for choose image from pc
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image File");
-
-        FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("Image File", "*.png", "*.jpg", "*.jpeg");
-        fileChooser.getExtensionFilters().add(extensionFilter);
-        File file = fileChooser.showOpenDialog(Launcher.stage);
-
-        if(file != null) {
-            imageProduit.setImage(new Image(file.toURI().toString()));
+            field.setStyle("--un-focus-color: #777; --focus-color: #0f9d58;");
         }
     }
 
     @FXML
     private void onAdd() { // Add produit to database
-        setValidFontRequired(fieldReference, iconReference, fieldReference.getText(), ProduitRegex.REFERENCE);
-
-        if(iconReference.isVisible() || iconGenCode.isVisible() || iconCodeBarre.isVisible() || iconLibProd.isVisible() || iconPrixHT.isVisible()
-                || iconQteReappro.isVisible() || iconQteMin.isVisible()) {
-            toastMsg.show("Svp, il ya des champs n'est pas bien formé", 2000);
-            return;
-        }
 
         String fournisseurNomPrenom = comboFournisseur.getSelectionModel().getSelectedItem();
         int numFournisseur = fournisseurNomPrenom == null ? 1 : Integer.parseInt(fournisseurNomPrenom.split(" ")[0]);
@@ -141,7 +101,7 @@ public class AddProduitController implements Initializable {
                 .setPrixHt((fieldPrixHT.getText() == null || fieldPrixHT.getText().trim().isEmpty()) ? 0d : Double.parseDouble(fieldPrixHT.getText()))
                 .setQteReappro((fieldQteReappro.getText() == null || fieldQteReappro.getText().trim().isEmpty()) ? 0 : Integer.parseInt(fieldQteReappro.getText()))
                 .setQteMini((fieldQteMin.getText() == null || fieldQteMin.getText().trim().isEmpty()) ? 0 : Integer.parseInt(fieldQteMin.getText()))
-                .setTauxTva((comboTauxTva.getSelectionModel().getSelectedItem() == null)? 17d : Double.parseDouble(comboTauxTva.getSelectionModel().getSelectedItem()))
+                .setTauxTva((comboTauxTva.getSelectionModel().getSelectedItem() == null) ? 17d : Double.parseDouble(comboTauxTva.getSelectionModel().getSelectedItem()))
                 //.setPhoto(imageProduit.getImage())
                 .setNumFournisseur(numFournisseur)
                 .setPlusAuCatalogue(tglPlusAuCatalogue.isSelected())
@@ -156,19 +116,13 @@ public class AddProduitController implements Initializable {
 
         switch (status) {
             case -1:
-                toastMsg.show("Erreur de connexion !", 1500);
+                System.out.println("Error of connection");
                 break;
             case 0:
-                toastMsg.show("Erreur dans l'ajoute de Produit !", 1500);
+                System.out.println("Error in adding the product");
                 break;
-            default : {
-                Notifications.create()
-                        .title("Vous avez ajouter un Produit !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
+            default: {
+                System.out.println("Was added !");
                 onClear();
                 break;
             }
@@ -194,10 +148,7 @@ public class AddProduitController implements Initializable {
 
         tglPlusAuCatalogue.setSelected(false);
 
-        imageProduit.setImage(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/add_product.png"));
-
-        fieldReference.setStyle("-jfx-un-focus-color: #777; -jfx-focus-color: #0f9d58;");
-        iconReference.setVisible(false);
+        fieldReference.setStyle("--un-focus-color: #777; --focus-color: #0f9d58;");
     }
 
     @FXML

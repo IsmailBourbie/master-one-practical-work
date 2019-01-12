@@ -3,19 +3,19 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<VBox prefHeight="620.0" prefWidth="1300.0" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/8.0.172-ea"
+<VBox prefHeight="520.0" prefWidth="700.0" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/8.0.172-ea"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.controllers.HomeController">
     <children>
         <StackPane>
             <children>
 
-                <VBox maxHeight="-Infinity" maxWidth="-Infinity" spacing="10.0" StackPane.alignment="CENTER">
+                <VBox maxHeight="-Infinity" maxWidth="-Infinity" alignment="CENTER" spacing="10.0" StackPane.alignment="CENTER">
                     <children>
                         <Label styleClass="slider-title" text="Main Screen"/>
                         <Label styleClass="slider-desc" text="Welcome in The Inventory Management"/>
                     </children>
                     <StackPane.margin>
-                        <Insets left="20.0" top="20.0"/>
+                        <Insets left="20.0" top="100.0"/>
                     </StackPane.margin>
                 </VBox>
             </children>
