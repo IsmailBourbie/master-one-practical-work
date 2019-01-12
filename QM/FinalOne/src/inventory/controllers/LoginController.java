@@ -45,37 +45,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void onLogin() {
-        if (fieldUser.getText() == null || !fieldUser.getText().trim().toLowerCase().matches("[a-z0-9_]{4,}")) {
-            System.out.println("an incorrect username");
-            return;
-        }
-        if (fieldPass.getText() == null || fieldPass.getText().length() < 4) {
-            System.out.println("an incorrect password");
-            return;
-        }
 
-        Login login = new Login(fieldUser.getText().trim().toLowerCase(), fieldPass.getText());
-
-        int status = LoginDao.checkLogin(login);
-        switch (status) {
-            case -1:
-                toastMsg.show("Connection failed !", 2000);
-                break;
-            case 0:
-                toastMsg.show("Nom Utilisateur et/ou le mot de passe faux !", 2000);
-                break;
-            case 1: // Login to the system (show system gui)
-                Parent systemView = null;
-                try {
-                    systemView = FXMLLoader.load(getClass().getResource("/resources/views/System.fxml"));
-                } catch (IOException ioe) {
-                    ioe.printStackTrace();
-                }
-                Stage stage = ((Stage) fieldUser.getScene().getWindow());
-                stage.setScene(new Scene((systemView)));
-                Launcher.centerOnScreen(); // make stage in the center
-                break;
-        }
 
     }
 }

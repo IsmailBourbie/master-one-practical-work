@@ -15,7 +15,6 @@ import javafx.scene.control.ComboBox;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import net.vatri.inventory.App;
-import net.vatri.inventory.libs.BaseController;
 import net.vatri.inventory.models.Product;
 import net.vatri.inventory.models.ProductGroup;
 

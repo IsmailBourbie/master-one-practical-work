@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import java.lang.*?>
 <StackPane fx:id="root" prefHeight="620.0" prefWidth="1300.0" stylesheets="@../css/crud-view.css"
@@ -11,33 +10,30 @@
     <children>
         <VBox spacing="20.0">
             <children>
-                <Label styleClass="title" text="Gestion Produit"/>
+                <Label styleClass="title" text="Products"/>
                 <HBox alignment="CENTER_LEFT" spacing="15.0">
                     <children>
-                        <JFXTextField fx:id="fieldSearch" labelFloat="true" promptText="Recherche" styleClass="field"/>
-                        <JFXComboBox fx:id="comboSearchBy" labelFloat="true" promptText="Recherche Par"
-                                     styleClass="combo"/>
-                        <JFXButton buttonType="RAISED" onAction="#onAdd" text="Nouveau">
+                        <Button onAction="#onAdd" text="Add">
                             <styleClass>
                                 <String fx:value="btn"/>
                                 <String fx:value="btn-add"/>
                             </styleClass>
-                        </JFXButton>
-                        <JFXButton buttonType="RAISED" onAction="#onEdit" text="Modifier">
+                        </Button>
+                        <Button onAction="#onEdit" text="Update">
                             <styleClass>
                                 <String fx:value="btn"/>
                                 <String fx:value="btn-edit"/>
                             </styleClass>
-                        </JFXButton>
-                        <JFXButton buttonType="RAISED" onAction="#onDelete" text="Supprimer">
+                        </Button>
+                        <Button onAction="#onDelete" text="Delete">
                             <styleClass>
                                 <String fx:value="btn"/>
                                 <String fx:value="btn-delete"/>
                             </styleClass>
-                        </JFXButton>
+                        </Button>
                     </children>
                 </HBox>
-                <JFXTreeTableView fx:id="tableProduit" VBox.vgrow="ALWAYS"/>
+                <TreeTableView fx:id="tableProduit" VBox.vgrow="ALWAYS"/>
             </children>
             <StackPane.margin>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="10.0"/>

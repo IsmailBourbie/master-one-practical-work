@@ -1,5 +1,6 @@
 import dfAgents.SearcherAgent
 import dfAgents.ServiceAgent
+import jade.content.AgentAction
 import jade.core.ProfileImpl
 import jade.core.Runtime
 import jade.wrapper.AgentContainer

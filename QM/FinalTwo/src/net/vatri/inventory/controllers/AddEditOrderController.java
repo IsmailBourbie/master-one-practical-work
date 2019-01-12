@@ -1,5 +1,7 @@
 package net.vatri.inventory.controllers;
 
+import database.models.Facture;
+import database.models.Produit;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -15,10 +17,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import javafx.scene.control.cell.TextFieldTableCell;
 import net.vatri.inventory.App;
-import net.vatri.inventory.libs.BaseController;
-import net.vatri.inventory.models.*;
 
-public class AddEditOrderController extends BaseController implements Initializable {
+
+public class AddEditOrderController implements Initializable {
 
     private static final String STATUS_IN_PROGRESS = "in-progress";
     private static final String STATUS_COMPLETED = "completed";
@@ -40,18 +41,17 @@ public class AddEditOrderController extends BaseController implements Initializa
     private ComboBox<String> comboType;
 
     @FXML
-    private ComboBox<Product> comboProducts;
-    @FXML
-    private ComboBox<GroupVariant> comboVariants;
+    private ComboBox<Produit> comboProducts;
+
 
     @FXML
-    private TableView<OrderItem> tblItems;
+    private TableView<Facture> tblItems;
     @FXML
-    private TableColumn<Product, String> colProduct;
+    private TableColumn<Produit, String> colProduct;
     @FXML
     private TableColumn<GroupVariant, String> colVariant;
     @FXML
-    private TableColumn<OrderItem, String> colPrice;
+    private TableColumn<Facture, String> colPrice;
 
     @FXML
     private Label errorLabel;
@@ -92,7 +92,7 @@ public class AddEditOrderController extends BaseController implements Initializa
 
     private void _loadOrderData(String orderId) {
 
-        Order order = inventoryService.getOrder(orderId);
+        Facture order = inventoryService.getOrder(orderId);
 
         fldName.setText(order.getName());
         fldCity.setText(order.getCity());
@@ -219,4 +219,4 @@ public class AddEditOrderController extends BaseController implements Initializa
         }
     }
 
-}//class
+}

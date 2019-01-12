@@ -16,7 +16,6 @@ import javafx.collections.FXCollections;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import net.vatri.inventory.App;
-import net.vatri.inventory.libs.BaseController;
 import net.vatri.inventory.models.Product;
 
 public class ProductsController extends BaseController implements Initializable {
