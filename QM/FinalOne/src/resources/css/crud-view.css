@@ -6,7 +6,7 @@
 
 .title {
     -fx-font-size: 32px;
-    -fx-text-fill: #00ff4d
+    -fx-text-fill: #f5564e
 }
 
 .sub-title {
@@ -45,11 +45,11 @@
     -fx-scale-y: 1.02
 }
 
-.btn-add { -fx-background-color: #00ff4d;}
+.btn-add { -fx-background-color: #53d397;}
 
-.btn-edit { -fx-background-color: #00ff4d;}
+.btn-edit { -fx-background-color: #13abc4;}
 
-.btn-delete { -fx-background-color: #00ff4d;}
+.btn-delete { -fx-background-color: #db2d43;}
 
 .btn-detail { -fx-background-color: #00ff4d;}
 
