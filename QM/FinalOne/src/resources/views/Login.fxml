@@ -23,14 +23,14 @@
                 <HBox alignment="CENTER_LEFT" spacing="5.0">
                     <children>
 
-                        <TextField promptText="Username" fx:id="fieldUser" text="younes"
+                        <TextField promptText="Username" fx:id="fieldUser" text="ismail"
                                    styleClass="field" HBox.hgrow="ALWAYS"/>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" spacing="5.0">
                     <children>
 
-                        <PasswordField fx:id="fieldPass" promptText="Password" text="helloworld"
+                        <PasswordField fx:id="fieldPass" promptText="Password" text="hellohello"
                                        styleClass="field" HBox.hgrow="ALWAYS"/>
                     </children>
                 </HBox>

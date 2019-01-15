@@ -9,6 +9,10 @@
 
 .field {
     -fx-font-size: 20px;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: -fx-control-inner-background;
+    -fx-border-color: white white #888 white;
+    -fx-background-insets: 0;
     -fx-prompt-text-fill: #888;
     -jfx-unfocus-color: #51f393;
     -jfx-focus-color: #4af398
@@ -20,7 +24,7 @@
 
 .btn {
     -fx-font-size: 22px;
-    -fx-background-color: #00ff4d;
+    -fx-background-color: #53d397;
     -fx-text-fill: #FFF;
     -fx-background-radius: 5
 }
