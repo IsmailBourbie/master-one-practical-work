@@ -40,6 +40,6 @@ class Config {
     * show or hide errors message on screen
     * @var boolean
     */
-   const SHOW_ERR = false;
+   const SHOW_ERR = true;
 
 }
