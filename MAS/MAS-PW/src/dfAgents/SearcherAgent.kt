@@ -68,6 +68,7 @@ class SearcherAgent : Agent() {
                 val sd = ServiceDescription()
                 sd.type = textField.text
                 template.addServices(sd)
+
                 try {
                     val result = DFService.search(myAgent, template)
                     serviceAgents = mutableListOf()

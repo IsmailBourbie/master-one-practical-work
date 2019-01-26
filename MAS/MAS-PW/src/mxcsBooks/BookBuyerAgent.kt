@@ -48,6 +48,9 @@ class BookBuyerAgent : Agent() {
         private lateinit var messageTemplate: MessageTemplate
 
         override fun action() {
+
+
+
             when (step) {
                 0 -> {
                     val cfpMessage = ACLMessage(ACLMessage.CFP)
