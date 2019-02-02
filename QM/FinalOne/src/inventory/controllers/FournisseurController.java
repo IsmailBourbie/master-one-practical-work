@@ -44,13 +44,9 @@ public class FournisseurController implements Initializable {
     // Fournisseurs data loading from database
     private List<Fournisseur> fournisseurs;
 
-    // Toast error msg showing in
-    private JFXSnackbar toastMsg;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        toastMsg = new JFXSnackbar(root); // initialize toast message
-
         initTableFournisseur();
         loadFournisseurTable();
 
@@ -210,7 +206,6 @@ public class FournisseurController implements Initializable {
         // get selected fournisseur from table
         String numFournisseurSelected = colNumFournisseur.getCellData(tableFournisseur.getSelectionModel().getSelectedIndex());
         if (numFournisseurSelected == null) {
-            toastMsg.show("Svp, selectionné le fournisseur qui vous voulez supprimer !", 2000);
             return;
         }
 
@@ -251,7 +246,7 @@ public class FournisseurController implements Initializable {
     private void onEdit() {
         String numFournisseurSelected = colNumFournisseur.getCellData(tableFournisseur.getSelectionModel().getSelectedIndex());
         if (numFournisseurSelected == null) {
-            toastMsg.show("Svp, selectionné le fournisseur qui vous voulez Modifier !", 2000);
+
             return;
         }
         for (Fournisseur fournisseur : fournisseurs) {

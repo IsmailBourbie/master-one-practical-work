@@ -7,11 +7,14 @@ import inventory.database.dao.MainDao;
 import inventory.database.models.Fournisseur;
 import inventory.database.models.designpatterns.builder.FournisseurBuilder;
 import inventory.utils.regex.ClientRegex;
-import com.jfoenix.controls.*;
+
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -28,26 +31,24 @@ public class AddFournisseurController implements Initializable {
 
     /* FournisseurRegex infos */
     @FXML
-    private JFXTextField fieldNumero, fieldSociete, fieldNom, fieldPrenom, fieldTelephone, fieldMobile, fieldFax,
+    private TextField fieldNumero, fieldSociete, fieldNom, fieldPrenom, fieldTelephone, fieldMobile, fieldFax,
             fieldEmail, fieldAdresse, fieldCodePostal, fieldVille, fieldPays;
     @FXML
-    private JFXComboBox<String> comboCivilite;
+    private ComboBox<String> comboCivilite;
     @FXML // Error icons
     private FontAwesomeIconView iconSociete, iconNom, iconPrenom, iconTelephone, iconMobile, iconFax,
             iconEmail, iconAdresse, iconCodePostal, iconVille, iconPays;
 
     @FXML
-    private JFXTextArea areaObservations;
+    private TextArea areaObservations;
 
-    // For show error msg (like: Toast in android)
-    private JFXSnackbar toastMsg;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Initialize combo Civilite
         comboCivilite.getItems().addAll("Mr", "Mme", "Melle");
 
-        toastMsg = new JFXSnackbar(root);
+
         initFieldListener();
 
         // Initialize Numero Fournisseur (get auto increment from db)
@@ -69,11 +70,11 @@ public class AddFournisseurController implements Initializable {
         fieldPays.textProperty().addListener((observable, oldValue, newValue) -> setValidFont(fieldPays, iconPays, newValue, ClientRegex.PAYS));
     }
 
-    private void setValidFont(JFXTextField field, FontAwesomeIconView errorIcon, String newValue, String regex) { // Change the font if not valid or reset color
+    private void setValidFont(TextField field, FontAwesomeIconView errorIcon, String newValue, String regex) { // Change the font if not valid or reset color
         AddClientController.something(field, errorIcon, newValue, regex);
     }
 
-    private void setValidFontRequired(JFXTextField field, FontAwesomeIconView errorIcon, String newValue, String regex) {
+    private void setValidFontRequired(TextField field, FontAwesomeIconView errorIcon, String newValue, String regex) {
         if(newValue == null || !newValue.trim().matches(regex)) {
             field.setStyle("-jfx-un-focus-color: #E00; -jfx-focus-color: #D00;");
             errorIcon.setVisible(true);
@@ -100,7 +101,7 @@ public class AddFournisseurController implements Initializable {
                 || iconAdresse.isVisible() || iconCodePostal.isVisible() || iconVille.isVisible()
                 || iconPays.isVisible()) {
 
-            toastMsg.show("Svp, il ya des champs n'est pas bien formé", 2000);
+
             return;
         }
 
@@ -125,20 +126,12 @@ public class AddFournisseurController implements Initializable {
 
         switch (status) {
             case -1:
-                toastMsg.show("Erreur de connexion !", 1500);
+
                 break;
             case 0:
-                toastMsg.show("Erreur dans l'ajoute de fournisseur !", 1500);
+
                 break;
             default : {
-                Notifications.create()
-                        .title("Vous avez ajouter un fournisseur !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
-
                 onClear();
                 // Initialize Numero Fournisseur (get auto increment from db)
                 int currentAutoIncrement = MainDao.getCurrentAutoIncrement("Fournisseur");

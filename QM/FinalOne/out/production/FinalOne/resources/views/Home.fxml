@@ -46,6 +46,19 @@
                         <Label styleClass="cards-title" text="Supplier"/>
                     </children>
                 </VBox>
+                <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="200.0" prefWidth="100.0" spacing="10.0"
+                      styleClass="cards">
+                    <children>
+                        <Label styleClass="cards-title" text="Client File"/>
+                    </children>
+                </VBox>
+
+                <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="200.0" prefWidth="100.0" spacing="10.0"
+                      styleClass="cards">
+                    <children>
+                        <Label styleClass="cards-title" text="Settlement"/>
+                    </children>
+                </VBox>
             </children>
         </HBox>
     </children>

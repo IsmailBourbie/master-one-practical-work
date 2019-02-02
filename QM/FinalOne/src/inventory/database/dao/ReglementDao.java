@@ -13,6 +13,33 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ReglementDao {
+    public static List<Reglement> getReglements() {
+
+        String sql = "SELECT * FROM Reglement;";
+
+        List<Reglement> modeReglements = new LinkedList<>();
+        try {
+            Statement st = DBConnection.con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                modeReglements.add(new Reglement(rs.getInt("IDReglement"),
+                        rs.getDate("dateReglement"),
+                        rs.getInt("IDModeReglement"),
+                        rs.getInt("NumFacture"),
+                        rs.getString("SaisiPar"),
+                        rs.getDate("SaisiLe"),
+                        rs.getString("Observations")));
+            }
+
+        } catch (SQLException se) {
+            System.out.println("Get Mode ReglementDao Error SQL");
+            se.printStackTrace();
+            return null;
+        }
+        return modeReglements;
+    }
+
     public static List<ModeReglement> getModeReglements() {
 
         String sql = "SELECT * FROM ModeReglement;";
@@ -35,7 +62,7 @@ public class ReglementDao {
     }
 
     public static int addReglement(Reglement reglement) {
-        if(DBConnection.con == null)
+        if (DBConnection.con == null)
             return -1;
 
         String sql = "INSERT INTO `reglement`(`DateReglement`, `IDModeReglement`, `NumFacture`, `SaisiPar`, `SaisiLe`, `Observations`) VALUES (?, ?, ?, ?, ?, ?);";
