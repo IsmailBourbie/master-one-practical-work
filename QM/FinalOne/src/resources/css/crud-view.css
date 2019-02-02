@@ -45,11 +45,11 @@
     -fx-scale-y: 1.02
 }
 
-.btn-add { -fx-background-color: #53d397;}
+.btn-add { -fx-background-color: #00ff4d;}
 
-.btn-edit { -fx-background-color: #13abc4;}
+.btn-edit { -fx-background-color: #00ff4d;}
 
-.btn-delete { -fx-background-color: #db2d43;}
+.btn-delete { -fx-background-color: #00ff4d;}
 
 .btn-detail { -fx-background-color: #00ff4d;}
 

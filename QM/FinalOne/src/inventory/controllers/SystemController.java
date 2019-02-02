@@ -48,9 +48,9 @@ public class SystemController implements Initializable {
         try {
             homeView = FXMLLoader.load(getClass().getResource("/resources/views/Home.fxml"));
             clientView = FXMLLoader.load(getClass().getResource("/resources/views/Client.fxml"));
-            fournisseurView = FXMLLoader.load(getClass().getResource("/resources/views/Fournisseur.fxml"));
             produitView = FXMLLoader.load(getClass().getResource("/resources/views/Produit.fxml"));
             factureView = FXMLLoader.load(getClass().getResource("/resources/views/Facture.fxml"));
+            fournisseurView = FXMLLoader.load(getClass().getResource("/resources/views/Fournisseur.fxml"));
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
@@ -79,10 +79,12 @@ public class SystemController implements Initializable {
         VBox boxClient = (VBox) boxItems.get(0);
         VBox boxProduit = (VBox) boxItems.get(1);
         VBox boxFacture = (VBox) boxItems.get(2);
+        VBox boxsupplier = (VBox) boxItems.get(3);
 
         boxClient.setOnMouseClicked(e -> setNode(clientView));
         boxProduit.setOnMouseClicked(e -> setNode(produitView));
         boxFacture.setOnMouseClicked(e -> setNode(factureView));
+        boxsupplier.setOnMouseClicked(e -> setNode(fournisseurView));
     }
 
     private void setNode(Node node) {

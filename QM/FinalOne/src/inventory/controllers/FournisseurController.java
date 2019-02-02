@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.TreeTableView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -30,14 +31,8 @@ public class FournisseurController implements Initializable {
     @FXML // Parent of all nodes (root node)
     private StackPane root;
 
-    @FXML
-    private JFXTextField fieldSearch;
-
-    @FXML
-    private JFXComboBox<String> comboSearchBy;
-
     @FXML // Table fournisseur
-    private JFXTreeTableView<TableFournisseur> tableFournisseur;
+    private TreeTableView<TableFournisseur> tableFournisseur;
 
     // Columns of table fournisseur
     private JFXTreeTableColumn<TableFournisseur, String>  colNumFournisseur, colSociete, colCivilite, colNom, colPrenom,
@@ -54,17 +49,11 @@ public class FournisseurController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comboSearchBy.getItems().addAll("Tout", "N° Fournisseur", "Societe", "Civilite", "Nom", "Prenom", "Adresse", "Ville", "Pays", "Email");
-        comboSearchBy.getSelectionModel().select(0);
-
         toastMsg = new JFXSnackbar(root); // initialize toast message
 
         initTableFournisseur();
         loadFournisseurTable();
 
-        // Add Filter if i change the value of search field
-        fieldSearch.setOnKeyReleased(e -> filterSearchTable());
-        comboSearchBy.setOnAction(e -> filterSearchTable());
     }
 
     /* Start Table */
@@ -195,60 +184,14 @@ public class FournisseurController implements Initializable {
         }
     }
 
-    private void filterSearchTable() {
-        tableFournisseur.setPredicate((TreeItem<TableFournisseur> fournisseur) -> {
-            String numFournisseur = fournisseur.getValue().numFournisseur.getValue();
-            String societe = (fournisseur.getValue().societe.getValue() == null) ? "" : fournisseur.getValue().societe.getValue().toLowerCase();
-            String civilite = (fournisseur.getValue().civilite.getValue() == null) ? "" : fournisseur.getValue().civilite.getValue().toLowerCase();
-            String nom = (fournisseur.getValue().nom.getValue() == null) ? "" : fournisseur.getValue().nom.getValue().toLowerCase();
-            String prenom = (fournisseur.getValue().prenom.getValue() == null) ? "" : fournisseur.getValue().prenom.getValue().toLowerCase();
-            String adresse = (fournisseur.getValue().adresse.getValue() == null) ? "" : fournisseur.getValue().adresse.getValue().toLowerCase();
-            String ville = (fournisseur.getValue().ville.getValue() == null) ? "" : fournisseur.getValue().ville.getValue().toLowerCase();
-            String pays = (fournisseur.getValue().pays.getValue() == null) ? "" : fournisseur.getValue().pays.getValue().toLowerCase();
-            String email = (fournisseur.getValue().email.getValue() == null) ? "" : fournisseur.getValue().email.getValue().toLowerCase();
 
-
-            switch (comboSearchBy.getSelectionModel().getSelectedIndex()) {
-                case 0:
-                    return numFournisseur.contains(fieldSearch.getText().toLowerCase())
-                            || societe.contains(fieldSearch.getText().toLowerCase())
-                            || civilite.contains(fieldSearch.getText().toLowerCase())
-                            || nom.contains(fieldSearch.getText().toLowerCase())
-                            || prenom.contains(fieldSearch.getText().toLowerCase())
-                            || adresse.contains(fieldSearch.getText().toLowerCase())
-                            || ville.contains(fieldSearch.getText().toLowerCase())
-                            || pays.contains(fieldSearch.getText().toLowerCase())
-                            || email.contains(fieldSearch.getText().toLowerCase());
-                case 1:
-                    return numFournisseur.contains(fieldSearch.getText().toLowerCase());
-                case 2:
-                    return societe.contains(fieldSearch.getText().toLowerCase());
-                case 3:
-                    return civilite.contains(fieldSearch.getText().toLowerCase());
-                case 4:
-                    return nom.contains(fieldSearch.getText().toLowerCase());
-                case 5:
-                    return prenom.contains(fieldSearch.getText().toLowerCase());
-                case 6:
-                    return adresse.contains(fieldSearch.getText().toLowerCase());
-                case 7:
-                    return ville.contains(fieldSearch.getText().toLowerCase());
-                case 8:
-                    return pays.contains(fieldSearch.getText().toLowerCase());
-                case 9:
-                    return email.contains(fieldSearch.getText().toLowerCase());
-                default: return true;
-            }
-
-        });
-    }
 
     /* End Table */
 
     @FXML
     private void onAdd() {
         try {
-            VBox paneAddFournisseur = FXMLLoader.load(getClass().getResource("/com/houarizegai/gestioncommercial/resources/views/forms/fournisseur/AddFournisseur.fxml"));
+            VBox paneAddFournisseur = FXMLLoader.load(getClass().getResource("/resources/views/forms/fournisseur/AddFournisseur.fxml"));
             dialogFournisseurAdd = getSpecialDialog(paneAddFournisseur);
             dialogFournisseurAdd.show();
 

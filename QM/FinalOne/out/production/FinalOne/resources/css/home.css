@@ -4,13 +4,13 @@
 
 .slider-title {
     -fx-font-size: 35px;
-    -fx-text-fill: #000000;
+    -fx-text-fill: #f5564e;
 
 }
 
 .slider-desc {
     -fx-font-size: 25px;
-    -fx-text-fill: #000000;
+    -fx-text-fill: rgba(15, 10, 60, 0.63);
 }
 
 /* Start card */
@@ -30,7 +30,7 @@
 
 .cards-title {
     -fx-font-size: 22px;
-    -fx-text-fill: #36f33b
+    -fx-text-fill: #009f9d
 }
 
 .cards-desc {

@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.TreeTableView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
@@ -34,7 +35,7 @@ public class ClientController implements Initializable {
 
 
     @FXML
-    private JFXTreeTableView<TableClient> tableClient;
+    private TreeTableView<TableClient> tableClient;
 
     private JFXTreeTableColumn<TableClient, String> colNumClient, colSociete, colCivilite, colNomClient, colPrenom,
             colAdresse, colVille, colPays, colEmail;
@@ -213,6 +214,7 @@ public class ClientController implements Initializable {
         } else {
             System.out.println("Connection error (cannot delete client)!");
         }
+        loadClientTableData();
     }
 
     private JFXDialog getSpecialDialog(Region content) { // This function create dialog

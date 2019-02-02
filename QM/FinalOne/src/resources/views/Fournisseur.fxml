@@ -6,41 +6,40 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.Button?>
 <StackPane fx:id="root" prefHeight="620.0" prefWidth="1300.0" stylesheets="@../css/crud-view.css"
            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="inventory.controllers.FournisseurController">
     <children>
         <VBox spacing="20.0">
             <children>
-                <Label styleClass="title" text="Gestion Fournisseur"/>
+                <Label styleClass="title" text="Suppliers"/>
                 <HBox alignment="CENTER_LEFT" spacing="15.0">
                     <children>
-                        <JFXTextField fx:id="fieldSearch" labelFloat="true" promptText="Recherche" styleClass="field"/>
-                        <JFXComboBox fx:id="comboSearchBy" labelFloat="true" promptText="Recherche Par"
-                                     styleClass="combo"/>
-                        <JFXButton buttonType="RAISED" onAction="#onAdd" text="Nouveau">
+                        <Button onAction="#onAdd" text="New">
                             <styleClass>
                                 <String fx:value="btn"/>
                                 <String fx:value="btn-add"/>
                             </styleClass>
-                        </JFXButton>
-                        <JFXButton buttonType="RAISED" onAction="#onEdit" text="Modifier">
+                        </Button>
+                        <Button onAction="#onEdit" text="Modify">
                             <styleClass>
                                 <String fx:value="btn"/>
                                 <String fx:value="btn-edit"/>
                             </styleClass>
-                        </JFXButton>
-                        <JFXButton buttonType="RAISED" onAction="#onDelete" text="Supprimer">
+                        </Button>
+                        <Button onAction="#onDelete" text="Delete">
                             <styleClass>
                                 <String fx:value="btn"/>
                                 <String fx:value="btn-delete"/>
                             </styleClass>
-                        </JFXButton>
+                        </Button>
                     </children>
                 </HBox>
                 <ScrollPane VBox.vgrow="ALWAYS">
                     <content>
-                        <JFXTreeTableView fx:id="tableFournisseur" prefHeight="455.0" prefWidth="1610.0"/>
+                        <TreeTableView fx:id="tableFournisseur" prefHeight="455.0" prefWidth="1610.0"/>
                     </content>
                 </ScrollPane>
             </children>
