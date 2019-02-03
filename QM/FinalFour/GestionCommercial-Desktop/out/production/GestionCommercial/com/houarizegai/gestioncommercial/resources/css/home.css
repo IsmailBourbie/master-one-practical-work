@@ -1,0 +1,48 @@
+* {
+    -fx-font-family: tahoma, arial, "Comic Sans MS"
+}
+
+.slider-title {
+    -fx-font-size: 35px;
+    -fx-text-fill: #FFF;
+    -fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.4), 2, 2, 2, 3);
+}
+
+.slider-desc {
+    -fx-font-size: 25px;
+    -fx-text-fill: #FFF;
+    -fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.5), 2, 2, 2, 3);
+}
+
+/* Start card */
+
+.cards {
+    /*-fx-pref-width: 180px;*/
+    -fx-padding: 0 0 0 10px;
+    -fx-background-color: #FFF;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 6, 0, 0, 0);
+    -fx-end-margin: 10px;
+    -fx-background-radius: 5
+}
+
+.cards:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+    -fx-background-color: #EEEEEE;
+    -fx-cursor: hand
+}
+
+.cards-title {
+    -fx-font-size: 22px;
+    -fx-text-fill: #222831;
+}
+
+.cards-desc {
+    -fx-text-alignment: center;
+    -fx-font-size: 14px;
+    -fx-fill: #555
+}
+
+.Hbox-home {
+    -fx-padding: 0 0 0 10px;
+}
+/* End card */

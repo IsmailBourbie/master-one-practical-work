@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<HBox alignment="CENTER" style="-fx-padding: 10px 0 0 10px;" styleClass="Hbox-home" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.houarizegai.gestioncommercial.java.controllers.HomeController">
+    <children>
+        <VBox alignment="BASELINE_LEFT" prefHeight="620.0" prefWidth="450.0" spacing="10" stylesheets="@../css/home.css">
+            <children>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0" styleClass="cards">
+                    <children>
+                        <MaterialDesignIconView fill="#00adb5" glyphName="ACCOUNT" size="30" styleClass="icon" />
+                        <Label styleClass="cards-title" text="Clients" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0" styleClass="cards">
+                    <children>
+                        <MaterialDesignIconView fill="#00adb5" glyphName="FILE" size="30" styleClass="icon" />
+                        <Label styleClass="cards-title" text="Fiche Client" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0" styleClass="cards">
+                    <children>
+                        <MaterialDesignIconView fill="#00adb5" glyphName="ACCOUNT_MULTIPLE" size="30" styleClass="icon" />
+                        <Label styleClass="cards-title" text="Fourniseurs" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0" styleClass="cards">
+                    <children>
+                        <MaterialDesignIconView fill="#00adb5" glyphName="CART" size="30" styleClass="icon" />
+                        <Label styleClass="cards-title" text="Produits" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0" styleClass="cards">
+                    <children>
+                        <MaterialDesignIconView fill="#00adb5" glyphName="NOTE" size="30" styleClass="icon" />
+                        <Label styleClass="cards-title" text="Facture Client" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0" styleClass="cards">
+                    <children>
+                        <MaterialDesignIconView fill="#00adb5" glyphName="CREDIT_CARD" size="30" styleClass="icon" />
+                        <Label styleClass="cards-title" text="Reglement" />
+                    </children>
+                </HBox>
+            </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="850.0">
+            <children>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Label styleClass="cards-title" text="Tableau de bord" />
+                    </children>
+                    <children>
+                        <Label styleClass="cards-title" text="Gérer votre Stock" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</HBox>
