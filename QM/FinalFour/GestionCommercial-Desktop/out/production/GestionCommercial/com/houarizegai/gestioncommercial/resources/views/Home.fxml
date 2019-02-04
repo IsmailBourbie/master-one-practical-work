@@ -42,7 +42,7 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="100.0" prefWidth="100.0" spacing="10.0" styleClass="cards">
                     <children>
-                        <MaterialDesignIconView fill="#00adb5" glyphName="BANK" size="30" styleClass="icon" />
+                        <MaterialDesignIconView fill="#00adb5" glyphName="CREDIT_CARD" size="30" styleClass="icon" />
                         <Label styleClass="cards-title" text="Reglement" />
                     </children>
                 </HBox>

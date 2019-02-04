@@ -136,14 +136,7 @@ public class AddFournisseurController implements Initializable {
                 toastMsg.show("Erreur dans l'ajoute de fournisseur !", 1500);
                 break;
             default : {
-                Notifications.create()
-                        .title("Vous avez ajouter un fournisseur !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
-
+                toastMsg.show("Vous avez ajouter un fournisseur !", 1500);
                 onClear();
                 // Initialize Numero Fournisseur (get auto increment from db)
                 int currentAutoIncrement = MainDao.getCurrentAutoIncrement("Fournisseur");

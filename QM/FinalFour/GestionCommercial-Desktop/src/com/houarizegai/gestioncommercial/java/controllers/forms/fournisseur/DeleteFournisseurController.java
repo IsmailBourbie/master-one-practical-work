@@ -19,8 +19,7 @@ import java.util.ResourceBundle;
 public class DeleteFournisseurController implements Initializable {
 
     @FXML
-    private Label lblNumero, lblNom, lblPrenom, lblCivilite, lblEmail, lblType, lblSociete, lblAdresse,
-            lblCodePostal, lblVille, lblTelephone, lblMobile, lblFax, lblPays;
+    private Label lblNumero, lblNom, lblPrenom;
     @FXML
     private Text txtObservations;
 
@@ -33,17 +32,6 @@ public class DeleteFournisseurController implements Initializable {
         lblNumero.setText(String.valueOf(fournisseur.getNumFournisseur()));
         lblNom.setText(fournisseur.getNom());
         lblPrenom.setText(fournisseur.getPrenom());
-        lblCivilite.setText(fournisseur.getCivilite());
-        lblEmail.setText(fournisseur.getEmail());
-        lblSociete.setText(fournisseur.getSociete());
-        lblAdresse.setText(fournisseur.getAdresse());
-        lblCodePostal.setText(fournisseur.getCodePostal());
-        lblVille.setText(fournisseur.getVille());
-        lblTelephone.setText(fournisseur.getTelephone());
-        lblMobile.setText(fournisseur.getMobile());
-        lblFax.setText(fournisseur.getFax());
-        lblPays.setText(fournisseur.getPays());
-        txtObservations.setText(fournisseur.getObservations());
     }
 
     @FXML
@@ -53,13 +41,7 @@ public class DeleteFournisseurController implements Initializable {
         if (status == -1) {
             System.out.println("Connection error (cannot delete Fournisseur)!");
         } else {
-            Notifications notification = Notifications.create()
-                    .title("Vous avez supprimer le Fournisseur !")
-                    .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                    .hideAfter(Duration.millis(2000))
-                    .position(Pos.BOTTOM_RIGHT);
-            notification.darkStyle();
-            notification.show();
+            System.out.println("deleted");
         }
 
         FournisseurController.dialogFournisseurDelete.close();

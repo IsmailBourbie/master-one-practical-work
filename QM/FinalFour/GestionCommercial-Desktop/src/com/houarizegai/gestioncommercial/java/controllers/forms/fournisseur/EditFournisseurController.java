@@ -136,13 +136,7 @@ public class EditFournisseurController implements Initializable {
                 toastMsg.show("Erreur dans la modification de fournisseur !", 1500);
                 break;
             default : {
-                Notifications.create()
-                        .title("Vous avez modifier le fournisseur !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
+                toastMsg.show("Vous avez modifier le fournisseur !", 1500);
 
                 FournisseurController.dialogFournisseurEdit.close();
                 break;

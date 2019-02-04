@@ -243,13 +243,7 @@ public class EditReglementController implements Initializable {
                 toastMsg.show("Erreur dans la modification de Reglement !", 1500);
                 break;
             default : {
-                Notifications.create()
-                        .title("Vous avez modifier le Reglement !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
+                toastMsg.show("Vous avez modifier le Reglement ", 1500);
                 onClose();
             }
         }

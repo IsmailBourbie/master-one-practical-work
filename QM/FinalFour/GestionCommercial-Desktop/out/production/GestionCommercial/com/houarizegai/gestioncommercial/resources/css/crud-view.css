@@ -6,7 +6,7 @@
 
 .title {
     -fx-font-size: 32px;
-    -fx-text-fill: linear-gradient(from 0 0 to 100px 100px, #00aacf, cyan)
+    -fx-text-fill: #007bff;
 }
 
 .sub-title {
@@ -17,9 +17,18 @@
 .field {
     -fx-pref-height: 38px;
     -fx-font-size: 17px;
-    -jfx-focus-color: #2196f3;
-    -jfx-unfocus-color: #800;
     -fx-prompt-text-fill: #777;
+}
+
+.field-ismail {
+    -fx-pref-height: 38px;
+    -fx-font-size: 17px;
+    -fx-prompt-text-fill: #777;
+    -fx-border-color: #393e46;
+    -fx-border-width: 1.5;
+    -fx-border-style: line;
+    -fx-border-radius: 4px;
+    -fx-padding: 0 0 0 5px;
 }
 
 .combo {
@@ -27,6 +36,17 @@
     -fx-font-size: 17px;
     -jfx-focus-color: #2196f3;
     -fx-cursor: hand;
+}
+.combo-ismail {
+    -fx-pref-height: 38px;
+    -fx-font-size: 17px;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-border-color: #393e46;
+    -fx-border-width: 1.5;
+    -fx-border-style: line;
+    -fx-border-radius: 4px;
+    -fx-padding: 0 0 0 5px;
 }
 
 /* Start Buttons */
@@ -47,13 +67,13 @@
 
 .btn-add { -fx-background-color: #03b372;}
 
-.btn-edit { -fx-background-color: #1170f3;}
+.btn-edit { -fx-background-color: #3161a3;}
 
-.btn-delete { -fx-background-color: #ff5559;}
+.btn-delete { -fx-background-color: #fa4659;}
 
-.btn-detail { -fx-background-color: #2196f3;}
+.btn-detail { -fx-background-color: #837dff;}
 
-.btn-print { -fx-background-color: #f3bf12;}
+.btn-print { -fx-background-color: #ffaa64;}
 
 /* End Buttons */
 

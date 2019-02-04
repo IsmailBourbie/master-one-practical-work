@@ -12,11 +12,11 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -37,7 +37,7 @@ public class AddClientController implements Initializable {
             iconEmail, iconType, iconAdresse, iconCodePostal, iconVille, iconPays;
 
     @FXML
-    private JFXToggleButton tglBtnLivreMemeAdresse, tglBtnFactureMemeAdresse, tglBtnExemptTva;
+    private CheckBox tglBtnLivreMemeAdresse, tglBtnFactureMemeAdresse, tglBtnExemptTva;
 
     @FXML
     private JFXTextArea areaObservations;
@@ -150,14 +150,7 @@ public class AddClientController implements Initializable {
                 toastMsg.show("Erreur dans l'ajoute de client !", 1500);
                 break;
             default : {
-                Notifications.create()
-                        .title("Vous avez ajouter un client !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
-
+                toastMsg.show("Vous avez ajouter un client !", 1500);
                 onClear();
                 // Initialize Numero Client (get auto increment from db)
                 int currentAutoIncrement = MainDao.getCurrentAutoIncrement("Client");

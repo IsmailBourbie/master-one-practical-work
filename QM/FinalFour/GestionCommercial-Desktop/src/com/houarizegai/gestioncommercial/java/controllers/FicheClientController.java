@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.StackPane;
@@ -35,7 +36,7 @@ public class FicheClientController implements Initializable {
     private StackPane root;
 
     @FXML
-    private JFXTextField fieldNumClient, fieldNomClient, fieldPrenomClient;
+    private TextField fieldNumClient, fieldNomClient, fieldPrenomClient;
 
     @FXML
     private JFXTreeTableView tableFicheClient;

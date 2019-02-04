@@ -13,6 +13,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.Region;
@@ -30,10 +32,10 @@ public class ReglementController implements Initializable {
     private StackPane root;
 
     @FXML
-    private JFXTextField fieldSearch;
+    private TextField fieldSearch;
 
     @FXML
-    private JFXComboBox<String> comboSearchBy;
+    private ComboBox<String> comboSearchBy;
 
     @FXML
     private JFXTreeTableView<TableReglement> tableReg;

@@ -20,9 +20,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -42,7 +40,7 @@ public class FactureController implements Initializable {
     /* Start Client */
 
     @FXML
-    private JFXTextField fieldNumClient, fieldNomClient, fieldPrenomClient;
+    private TextField fieldNumClient, fieldNomClient, fieldPrenomClient;
 
     public static Client selectedClient;
 
@@ -58,10 +56,10 @@ public class FactureController implements Initializable {
     /* Start Facture Infos */
 
     @FXML
-    private JFXTextField fieldNumFacture;
+    private TextField fieldNumFacture;
 
     @FXML
-    private JFXDatePicker pickerDate;
+    private DatePicker pickerDate;
 
     /* End Facture Infos */
 

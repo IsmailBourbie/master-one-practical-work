@@ -255,13 +255,7 @@ public class AddReglementController implements Initializable {
                 toastMsg.show("Erreur dans l'ajoute de Reglement !", 1500);
                 break;
             default: {
-                Notifications.create()
-                        .title("Vous avez ajouter un Reglement !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
+                toastMsg.show("Vous avez ajouter un Reglement !", 1500);
                 onClear();
                 break;
             }

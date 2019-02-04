@@ -100,10 +100,6 @@ public class SystemController implements Initializable {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
-        burgerTask = new HamburgerSlideCloseTransition(hamburgerMenu);
-        //burgerTask.setRate(burgerTask.getRate() * -1);
-        hamburgerMenu.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> showHideMenu());
-
         // Add action to Menu Item
         for(Node node : menuDrawerPane.getChildren()) {
             if(node.getAccessibleText() != null) {
@@ -167,8 +163,6 @@ public class SystemController implements Initializable {
                     ((JFXButton) node).setOnAction(e -> Platform.exit());
                 }
                 // close menu
-                burgerTask.setRate(burgerTask.getRate() * -1);
-                burgerTask.play();
                 drawerMenu.close();
                 drawerMenu.setStyle("-fx-pref-width: 0px");
             }
@@ -237,17 +231,17 @@ public class SystemController implements Initializable {
 
     @FXML
     private void onShowSettings() {
-        try {
-            VBox settingsView = FXMLLoader.load(getClass().getResource("/com/houarizegai/gestioncommercial/resources/views/Settings.fxml"));
-            dialogSettings = new JFXDialog(root, settingsView, JFXDialog.DialogTransition.BOTTOM);
-            dialogSettings.show();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
+        setNode(homeView);
     }
 
     @FXML
     private void onShowAbout() {
-        dialogAbout.show();
+        try {
+            Parent loginView = FXMLLoader.load(getClass().getResource("/com/houarizegai/gestioncommercial/resources/views/Login.fxml"));
+            ((Stage) holderPane.getScene().getWindow()).setScene(new Scene(loginView));
+            Launcher.centerOnScreen(); // make stage in the center
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 }

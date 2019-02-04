@@ -47,13 +47,7 @@ public class DeleteReglementController implements Initializable {
         if (status == -1) {
             System.out.println("Connection error (cannot delete Reglement)!");
         } else {
-            Notifications.create()
-                    .title("Vous avez supprimer le Reglement !")
-                    .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                    .hideAfter(Duration.millis(2000))
-                    .position(Pos.BOTTOM_RIGHT)
-                    .darkStyle()
-                    .show();
+            System.out.println("deleted");
         }
 
         ReglementController.dialogReglementDelete.close();

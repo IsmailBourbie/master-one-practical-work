@@ -16,11 +16,14 @@
          <children>
             <StackPane prefHeight="50.0" styleClass="nav-bar">
                <children>
-                  <JFXHamburger fx:id="hamburgerMenu" maxHeight="-Infinity" maxWidth="-Infinity" StackPane.alignment="CENTER_LEFT" />
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Icons525View glyphName="HOME"  onMouseClicked="#onShowSettings" size="29" styleClass="icon-nav" />
+                     </children>
+                  </HBox>
                   <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="15.0" StackPane.alignment="CENTER_RIGHT">
                      <children>
-                        <Icons525View glyphName="WP_COG_O" onMouseClicked="#onShowSettings" size="29" styleClass="icon-nav" />
-                        <MaterialDesignIconView glyphName="INFORMATION_OUTLINE" onMouseClicked="#onShowAbout" size="35" styleClass="icon-nav" />
+                        <MaterialDesignIconView glyphName="LOGOUT" onMouseClicked="#onShowAbout" size="35" styleClass="icon-nav" />
                      </children>
                      <StackPane.margin>
                         <Insets right="20.0" />

@@ -15,7 +15,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -149,13 +148,7 @@ public class EditClientController implements Initializable {
                 toastMsg.show("Erreur dans la modification de client !", 1500);
                 break;
             default : {
-                Notifications.create()
-                        .title("Vous avez modifier le client !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
+                toastMsg.show("Vous avez modifier le client !", 1500);
 
                 ClientController.dialogClientEdit.close();
                 break;

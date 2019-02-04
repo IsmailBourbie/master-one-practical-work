@@ -14,6 +14,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -41,7 +42,7 @@ public class EditProduitController implements Initializable {
     private JFXTextArea areaDesc;
 
     @FXML
-    private JFXComboBox<String> comboTauxTva, comboFamille, comboPort, comboFournisseur;
+    private ComboBox<String> comboTauxTva, comboFamille, comboPort, comboFournisseur;
 
     @FXML
     private JFXToggleButton tglPlusAuCatalogue;
@@ -165,13 +166,7 @@ public class EditProduitController implements Initializable {
                 toastMsg.show("Erreur dans la modification de Produit !", 1500);
                 break;
             default : {
-                Notifications.create()
-                        .title("Vous avez modifier le Produit !")
-                        .graphic(new ImageView(new Image("/com/houarizegai/gestioncommercial/resources/images/icons/valid.png")))
-                        .hideAfter(Duration.millis(2000))
-                        .position(Pos.BOTTOM_RIGHT)
-                        .darkStyle()
-                        .show();
+                toastMsg.show("Vous avez modifier le Produit !", 1500);
                 onClose();
                 break;
             }
