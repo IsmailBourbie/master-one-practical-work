@@ -4,7 +4,7 @@ import java.net.ServerSocket
 import java.util.*
 
 fun main() {
-    val port = 12345
+    val port = Constants.PORT
     val serverSocket = ServerSocket(port)
     println("Server is listening on $port")
     val socket = serverSocket.accept()
