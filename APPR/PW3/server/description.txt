@@ -1,0 +1,16 @@
+login: 
+    - URL:  http://localhost/master1/APPR/PW3/server/login.php
+    - PARAMS: 
+        - email : string (email)
+        - password : string
+
+register: 
+    - URL:  http://localhost/master1/APPR/PW3/server/register.php
+    - PARAMS: 
+        - name : string
+        - email : string (email)
+        - password : string
+
+get_users: 
+    - URL:  http://localhost/master1/APPR/PW3/server/get_users.php
+    - PARAMS: none        
