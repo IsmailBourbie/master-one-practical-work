@@ -20,6 +20,11 @@ class PetriNetwork(name: String) : PetriObject(name) {
         return true
     }
 
+    fun go(times: Int = 1) {
+        for (i in 0..times)
+            transitions[0].fire()
+    }
+
     fun add(petriObject: PetriObject) {
         when (petriObject) {
             is Arc -> arcs.add(petriObject)
@@ -72,10 +77,10 @@ class PetriNetwork(name: String) : PetriObject(name) {
         for (p in places) {
             sb.append(p).append(nl)
         }
-        sb.append("---Marking---").append(nl)
+        /*sb.append("---Marking---").append(nl)
         for (key in marking.keys) {
             sb.append("${key.name} => ${marking[key]}").append(nl)
-        }
+        }*/
         return sb.toString()
     }
 
