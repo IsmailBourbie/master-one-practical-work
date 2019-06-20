@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PW1 - Exercice 05</title>
+    <style>
+        input {
+            padding: 10px; background: transparent; border: 1px solid #676767; border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">        
+        <input id="dataInput" type="text" name="data" placeholder="Enter some data.." style="width: 188px;">
+        <span id="error" style="color: red"></span>
+        <div style="margin: 10px 0">
+            <input type="submit" value="Send" style="width: 100px;padding: 5px 10px;margin-right: 5px ;cursor: pointer;">
+            <input type="reset" value="Reset" style="width: 100px;padding: 5px 10px;cursor: pointer;">
+        </div>    
+    </form>
+    <script>
+        document.getElementsByTagName("form")[0].addEventListener("submit", function(e) {
+            var dataInput = document.getElementById('dataInput'),
+                errorElement = document.getElementById('error');
+            if(dataInput.value == '') {
+                errorElement.innerText = 'Error: Please Enter something!!'
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
