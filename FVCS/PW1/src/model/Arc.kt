@@ -1,8 +1,8 @@
 package model
 
-class Arc private constructor(name: String, internal var direction: Direction, internal var place: Place, internal var transition: Transition) : PetriObject(name) {
+class Arc (name: String, internal var direction: Direction, internal var place: Place, internal var transition: Transition) : PetriObject(name) {
 
-    var weight = 1
+    var weight = 2
 
     enum class Direction {
 
@@ -40,11 +40,11 @@ class Arc private constructor(name: String, internal var direction: Direction, i
         transition.addOutgoing(this)
     }
 
-    fun canMove(): Boolean {
+    fun canFire(): Boolean {
         return direction.canFire(place, weight)
     }
 
-    fun move() {
+    fun fire() {
         this.direction.fire(place, this.weight)
     }
 }

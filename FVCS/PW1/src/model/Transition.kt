@@ -4,35 +4,35 @@ import java.util.ArrayList
 
 class Transition(name: String) : PetriObject(name) {
 
-    private val incoming = ArrayList<Arc>()
-    private val outgoing = ArrayList<Arc>()
+    val incoming = ArrayList<Arc>()
+    val outgoing = ArrayList<Arc>()
 
     val isNotConnected: Boolean
         get() = incoming.isEmpty() && outgoing.isEmpty()
 
 
-    fun canMove(): Boolean {
+    fun canFire(): Boolean {
         var canMove: Boolean
 
         canMove = !this.isNotConnected
 
         for (arc in incoming) {
-            canMove = canMove and arc.canMove()
+            canMove = canMove and arc.canFire()
         }
 
         for (arc in outgoing) {
-            canMove = canMove and arc.canMove()
+            canMove = canMove and arc.canFire()
         }
         return canMove
     }
 
-    fun move() {
+    fun fire() {
         for (arc in incoming) {
-            arc.move()
+            arc.fire()
         }
 
         for (arc in outgoing) {
-            arc.move()
+            arc.fire()
         }
     }
 
@@ -47,6 +47,6 @@ class Transition(name: String) : PetriObject(name) {
     override fun toString(): String {
         return super.toString() +
                 (if (isNotConnected) " Is Not Connecred " else "") +
-                if (canMove()) " Can Move " else ""
+                if (canFire()) " Can Move " else ""
     }
 }

@@ -7,11 +7,17 @@ class PetriNetwork(name: String) : PetriObject(name) {
     internal var places: MutableList<Place> = ArrayList()
     internal var transitions: MutableList<Transition> = ArrayList()
     internal var arcs: MutableList<Arc> = ArrayList()
-    internal val markage = mutableMapOf<Place, Int>()
+    internal val marking = mutableMapOf<Place, Int>()
 
-    fun executeSeries(vararg transition: String) : Boolean{
-        //TODO add the code
-        return false
+    fun execute(times: Int = 1): Boolean {
+        for (i in 0..times) {
+            for (transition in transitions) {
+                if (transition.canFire())
+                    transition.fire()
+                else return false
+            }
+        }
+        return true
     }
 
     fun add(petriObject: PetriObject) {
@@ -31,13 +37,13 @@ class PetriNetwork(name: String) : PetriObject(name) {
     fun place(name: String): Place {
         val p = Place(name)
         places.add(p)
-        markage[p] = 0
+        marking[p] = 0
         return p
     }
 
-    fun place(name: String, initial: Int): Place {
-        val p = Place(name, initial)
-        markage[p] = initial
+    fun place(name: String, initial: Int, limit: Int = Place.UNLIMITED): Place {
+        val p = Place(name, initial, limit)
+        marking[p] = initial
         places.add(p)
         return p
     }
@@ -56,7 +62,7 @@ class PetriNetwork(name: String) : PetriObject(name) {
 
 
     override fun toString(): String {
-        val sb = StringBuilder("PetriNetwork")
+        val sb = StringBuilder("PetriNetwork ")
         sb.append(super.toString()).append(nl)
         sb.append("---Transitions---").append(nl)
         for (t in transitions) {
@@ -65,6 +71,10 @@ class PetriNetwork(name: String) : PetriObject(name) {
         sb.append("---Places---").append(nl)
         for (p in places) {
             sb.append(p).append(nl)
+        }
+        sb.append("---Marking---").append(nl)
+        for (key in marking.keys) {
+            sb.append("${key.name} => ${marking[key]}").append(nl)
         }
         return sb.toString()
     }

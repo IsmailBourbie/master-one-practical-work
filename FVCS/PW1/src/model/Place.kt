@@ -1,15 +1,6 @@
 package model
 
-import java.math.MathContext.UNLIMITED
-import java.math.MathContext.UNLIMITED
-
-
-
-
-
-class Place(name: String, var tokens : Int = 0) : PetriObject(name) {
-
-    private val maxTokens = UNLIMITED
+class Place(name: String, var tokens: Int = 0, val maxTokens: Int = UNLIMITED) : PetriObject(name) {
 
     fun addTokens(weight: Int) {
         this.tokens += weight
