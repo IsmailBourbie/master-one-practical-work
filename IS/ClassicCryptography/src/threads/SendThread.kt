@@ -1,6 +1,6 @@
 package threads
 
-import crypto.VignereAlgorithm
+import crypto.CryptoManager
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.IOException
@@ -18,7 +18,7 @@ class SendThread internal constructor(private val clientSocket: Socket) : Thread
             while (true) {
                 val line = reader.readLine() ?: break
                 if (line.equals("quit", ignoreCase = true)) break
-                val cryptogram = VignereAlgorithm.encrypt(line)
+                val cryptogram = CryptoManager.encrypt(line)
                 println("After $cryptogram")
                 outStream.write(cryptogram.toByteArray())
                 outStream.write(13)

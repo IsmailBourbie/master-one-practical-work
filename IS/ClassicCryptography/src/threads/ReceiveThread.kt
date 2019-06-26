@@ -1,5 +1,6 @@
 package threads
 
+import crypto.CryptoManager
 import crypto.VignereAlgorithm
 import java.io.BufferedReader
 import java.io.IOException
@@ -23,7 +24,7 @@ class ReceiveThread(private val client: Socket) : Thread() {
             while (true) {
                 val receivedMessage = reader?.readLine() ?: break
                 println("Before $receivedMessage")
-                println("After ${VignereAlgorithm.decrypt(receivedMessage)}")
+                println("After ${CryptoManager.decrypt(receivedMessage)}")
             }
 
             reader!!.close()

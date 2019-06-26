@@ -1,3 +1,6 @@
+package sides
+
+import Constants
 import threads.ReceiveThread
 import threads.SendThread
 import java.io.IOException
