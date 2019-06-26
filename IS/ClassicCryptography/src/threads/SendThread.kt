@@ -1,5 +1,6 @@
 package threads
 
+import crypto.VignereAlgorithm
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.IOException
@@ -11,18 +12,19 @@ class SendThread internal constructor(private val clientSocket: Socket) : Thread
     @Synchronized
     override fun run() {
         try {
-            val dos = DataOutputStream(clientSocket.getOutputStream())
-            var message = ""
+            val outStream = DataOutputStream(clientSocket.getOutputStream())
             println("Connection Established. Write \"quit\" to exit")
-            val br = BufferedReader(InputStreamReader(System.`in`))
+            val reader = BufferedReader(InputStreamReader(System.`in`))
             while (true) {
-                val line = br.readLine() ?: break
+                val line = reader.readLine() ?: break
                 if (line.equals("quit", ignoreCase = true)) break
-                dos.write(line.toByteArray())
-                dos.write(13)
-                dos.flush()
+                val cryptogram = VignereAlgorithm.encrypt(line)
+                println("After $cryptogram")
+                outStream.write(cryptogram.toByteArray())
+                outStream.write(13)
+                outStream.flush()
             }
-            dos.close()
+            outStream.close()
         } catch (e: IOException) {
             System.exit(0)
         } finally {
@@ -31,7 +33,6 @@ class SendThread internal constructor(private val clientSocket: Socket) : Thread
             } catch (e: IOException) {
                 e.printStackTrace()
             }
-
         }
     }
 }

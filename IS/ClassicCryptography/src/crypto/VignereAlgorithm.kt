@@ -31,10 +31,10 @@ object VignereAlgorithm : CryptoAlgorithm {
         }
 
         for (l in 0 until plainText.length) {
-            cryptogram += if (plainText[i] in 'a'..'z')
-                vignere[ALPHABET.indexOf(bigKey[l].toString())][ALPHABET.indexOf(plainText[i].toString())]
+            cryptogram += if (plainText[l] in 'a'..'z')
+                vignere[ALPHABET.indexOf(bigKey[l].toString())][ALPHABET.indexOf(plainText[l].toString())]
             else
-                plainText[i]
+                plainText[l]
         }
 
         return cryptogram
