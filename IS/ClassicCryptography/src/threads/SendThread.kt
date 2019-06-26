@@ -7,7 +7,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.net.Socket
 
-class SendThread internal constructor(private val clientSocket: Socket) : Thread() {
+class SendThread(private val clientSocket: Socket) : Thread() {
 
     @Synchronized
     override fun run() {

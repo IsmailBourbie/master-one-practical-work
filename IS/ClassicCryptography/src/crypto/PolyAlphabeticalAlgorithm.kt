@@ -43,7 +43,7 @@ object PolyAlphabeticalAlgorithm : CryptoAlgorithm {
 
         for (l in 0 until cryptogram.length) {
             plainText += if (cryptogram[l] in 'a'..'z')
-                ALPHABET[(((ALPHABET.indexOf(cryptogram[l]) - ALPHABET.indexOf(bigKey[l])) % ALPHABET.length))]
+                ALPHABET[((((((ALPHABET.indexOf(cryptogram[l]) - ALPHABET.indexOf(bigKey[l])) % ALPHABET.length)) + ALPHABET.length) % ALPHABET.length))]
             else
                 cryptogram[l]
         }
