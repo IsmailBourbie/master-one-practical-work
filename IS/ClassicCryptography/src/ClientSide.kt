@@ -1,3 +1,5 @@
+import threads.ReceiveThread
+import threads.SendThread
 import java.net.Socket
 
 fun main() {

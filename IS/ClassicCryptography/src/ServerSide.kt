@@ -1,6 +1,7 @@
+import threads.ReceiveThread
+import threads.SendThread
 import java.io.IOException
 import java.net.ServerSocket
-import java.net.Socket
 
 fun main() {
     var serverSocket: ServerSocket? = null
