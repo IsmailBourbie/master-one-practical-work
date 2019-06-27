@@ -13,7 +13,7 @@
         <JFXListView fx:id="msgNodes" VBox.vgrow="ALWAYS"/>
         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="565.0" spacing="10.0">
             <children>
-                <JFXTextField fx:id="msgField" prefHeight="49.0" prefWidth="366.0" promptText="Type message"
+                <JFXTextField fx:id="messageField" prefHeight="49.0" prefWidth="366.0" promptText="Type message"
                               styleClass="field" unFocusColor="#4d4d4dd4" HBox.hgrow="ALWAYS"/>
                 <Icons525View glyphName="MAIL_SEND" onMouseClicked="#sendMsg" size="30" styleClass="icon-send"/>
             </children>

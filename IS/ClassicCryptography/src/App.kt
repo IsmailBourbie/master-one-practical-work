@@ -14,7 +14,7 @@ class App : Application() {
         val root = FXMLLoader.load<Parent>(javaClass.getResource("/views/Main.fxml"))
         val scene = Scene(root)
         stage.scene = scene
-        stage.title = "Chat FX"
+        stage.title = "Secure Messaging"
         stage.icons.add(Image("/images/icon-app.png"))
         stage.show()
     }
