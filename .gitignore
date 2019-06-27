@@ -14,3 +14,4 @@ load_salaries.dump
 QM/Server/logs/**
 IS/ClassicCryptography/lib/
 IS/ClassicCryptography/out/
+FVCS/PW2/out
