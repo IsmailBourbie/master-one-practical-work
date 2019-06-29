@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculate age</title>
+</head>
+<body>
+    <input id="birthday" type="date">
+    <button id="calculate">Calculate</button>
+    <p id="box_show"></p>
+    <script>
+        document.getElementById('calculate').addEventListener('click', function() {
+            var birthdayElement = document.getElementById('birthday'),
+                box_show = document.getElementById('box_show'),
+                birthdayArray = birthdayElement.value.split("-"),
+                today = getTodayDate(),
+                result = [];
+
+                // No change of date
+                if(birthdayElement.value.length === 0) {
+                    box_show.innerText = "Please Select a date !!";
+                    return false;
+                    }
+
+                birthday = convertDateToDays(Number.parseInt(birthdayArray[0]), Number.parseInt(birthdayArray[1]), Number.parseInt(birthdayArray[2]));
+                var diff = today - birthday;
+                if (diff < 0) {
+                    box_show.innerText = "Invalid Date";
+                    return false;
+                }
+                result = convertDaysToDate(diff);
+                box_show.innerText = result[0] + "year, " + result[1] +"month, " + result[2] +"day";
+        });
+
+
+        // Helper function
+
+        // return the date of today converted to days
+        function getTodayDate() {
+            var todayObj = new Date();
+            return convertDateToDays(todayObj.getFullYear(), todayObj.getMonth() + 1, todayObj.getDate());
+        }
+
+
+        // return the days number of date
+        function convertDateToDays(year, month, day) {
+            return (year*365) + (month*31) + day;
+        }
+        
+
+        // make a date from days
+        function convertDaysToDate(days) {
+            var year = Math.floor(days / 365),
+                rest = days % 365,
+                months = Math.floor(rest / 31),
+                day = rest % 31;
+                return [year, months, day];
+        }        
+    </script>
+</body>
+</html> 
