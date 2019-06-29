@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Example</title>
+</head>
+
+<body>
+    <a href="">Click here!</a>
+    <p>Number of cliks is: <span id="click_counter">0</span></p>
+
+
+
+    <script>
+        var xmlhttp,
+            clickCounterElement = document.getElementById("click_counter");
+
+        function createRequestObject() {
+            if (window.XMLHttpRequest) {
+                // code for modern browsers
+                return new XMLHttpRequest();
+            } else {
+                // code for old IE browsers
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+
+
+        // on click the link
+        document.getElementsByTagName("a")[0].addEventListener("click", function (e) {            
+            e.preventDefault();
+
+            // Create Request Object;
+            xmlhttp = createRequestObject();
+
+            var counter = Number.parseInt(clickCounterElement.innerText);
+            clickCounterElement.innerText = "Loading...";
+            xmlhttp.onreadystatechange = handleAjaxReturn;   
+            // specific the type of request (get or post)
+            xmlhttp.open("GET", "./server_page.php?counter=" + counter, true);
+
+            // send the request
+            xmlhttp.send();
+        });
+
+        function handleAjaxReturn() {
+            console.log(xmlhttp.status);
+            if (xmlhttp.readyState == 4) {
+                if(xmlhttp.status == 200) {
+                    clickCounterElement.innerText = xmlhttp.responseText;
+                } else {
+                    clickCounterElement.innerHTML = "<strong>N/A</strong>";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
