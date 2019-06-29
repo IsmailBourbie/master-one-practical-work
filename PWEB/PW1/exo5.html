@@ -6,18 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PW1 - Exercice 05</title>
     <style>
+        form {
+            width: 400px;
+            box-shadow: 1px 1px 10px #000;
+            padding: 20px;
+            text-align: center;
+            margin: 70px auto;
+            border-radius: 8px;
+        }
         input {
-            padding: 10px; background: transparent; border: 1px solid #676767; border-radius: 5px;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid #676767;
+            border-radius: 5px;
+            margin-bottom: 20px
+        }
+        #send-btn {
+            width: 100px;
+            padding: 5px 10px;
+            margin-right: 5px ;
+            cursor: pointer;        
+            background: #5cc95c;
+            color: #FFF;
+        }
+
+        
+        #cancel-btn {
+            width: 100px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background: #C00;
+            color: #FFF;
         }
     </style>
 </head>
 <body>
-    <form method="POST">        
+    <h1 style="text-align: center">Exercice - 05</h1>
+    <form method="POST" autocomplete="off">     
+        <h3 style="color: #0000ff; font-size: 24px;">Simple Form</h3>   
         <input id="dataInput" type="text" name="data" placeholder="Enter some data.." style="width: 188px;">
         <span id="error" style="color: red"></span>
         <div style="margin: 10px 0">
-            <input type="submit" value="Send" style="width: 100px;padding: 5px 10px;margin-right: 5px ;cursor: pointer;">
-            <input type="reset" value="Reset" style="width: 100px;padding: 5px 10px;cursor: pointer;">
+            <input type="submit" id="send-btn" value="Send">
+            <input type="reset" id="cancel-btn" value="Reset">
         </div>    
     </form>
     <script>
@@ -27,6 +58,8 @@
             if(dataInput.value == '') {
                 errorElement.innerText = 'Error: Please Enter something!!'
                 e.preventDefault();
+            } else {
+                alert('Message Sent!');
             }
         });
     </script>
