@@ -12,3 +12,6 @@ load_salaries.dump
 /captures
 .externalNativeBuild
 QM/Server/logs/**
+IS/ClassicCryptography/lib/
+IS/ClassicCryptography/out/
+FVCS/PW2/out
