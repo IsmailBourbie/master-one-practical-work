@@ -12,7 +12,7 @@ fun main() {
         socket = Socket(Constants.IP_ADDRESS, Constants.PORT)
         val outStream = socket.getOutputStream()
         val writer = PrintStream(outStream)
-        writer.print("10")
+        writer.print(10)
         writer.flush()
     } catch (host: UnknownHostException) {
         println(host.localizedMessage)

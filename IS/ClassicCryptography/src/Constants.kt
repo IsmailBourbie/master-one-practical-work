@@ -1,4 +1,4 @@
 object Constants {
-    const val IP = "127.0.0.1"
+    const val IP = "192.168.43.90"
     const val PORT = 1234
 }
