@@ -1,5 +1,7 @@
 package rmi
 
+import javame.rmi.RemoteInterface
+
 class RemoteObject : RemoteInterface {
 
     override fun printMessage() {

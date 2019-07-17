@@ -1,5 +1,7 @@
 package rmi
 
+import javame.rmi.RemoteInterface
+import javame.rmi.RemoteObject
 import java.rmi.registry.LocateRegistry
 import java.rmi.server.UnicastRemoteObject
 

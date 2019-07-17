@@ -1,4 +1,4 @@
-package java.sockets;
+package javame.sockets;
 
 public class Constants {
     public static final int PORT = 12345;

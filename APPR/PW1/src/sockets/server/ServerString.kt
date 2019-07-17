@@ -1,6 +1,6 @@
 package sockets.server
 
-import java.sockets.Constants
+import javame.sockets.Constants
 import java.net.ServerSocket
 import java.util.*
 

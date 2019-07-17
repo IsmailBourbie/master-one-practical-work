@@ -1,9 +1,10 @@
-package sockets.server;
+package javame.sockets.server;
+
+import javame.sockets.Constants;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sockets.Constants;
 import java.util.Scanner;
 
 

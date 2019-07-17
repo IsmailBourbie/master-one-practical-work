@@ -1,5 +1,6 @@
 package rmi
 
+import javame.rmi.RemoteInterface
 import java.rmi.registry.LocateRegistry
 
 fun main() {

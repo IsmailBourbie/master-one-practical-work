@@ -1,6 +1,6 @@
 package sockets.client
 
-import java.sockets.Constants
+import javame.sockets.Constants
 import java.io.IOException
 import java.io.PrintStream
 import java.net.Socket
